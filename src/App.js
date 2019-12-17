@@ -8,35 +8,52 @@ class App extends Component {
     filterDishes:[],
     dishes: [
       {
-        'name': 'lemon pie',
-        'recipe': [
-          'lemon',
-          'egg',
-          'sugar'
+        'name': 'golden corn fritter',
+        'recipes': [
+          'corn'
         ],
+        'recipeObj': {
+          'corn': 4
+        }
       },
       {
-        'name': 'apple cider',
-        'recipe': [
-          'apple',
-          'water'
-        ]
+        'name': 'honey egg drop soup',
+        'recipes': [
+          'honey',
+          'egg'
+        ],
+        'recipeObj': {
+          'honey': 2,
+          'egg': 2
+        }
       },
       {
-        'name': 'orange juice',
-        'recipe': [
-          'orange'
-        ]
+        'name': 'spicy pot',
+        'recipes': [
+          'meat',
+          'mushroom',
+          'vegetable',
+          'cayenne pepper'
+        ],
+        'recipeObj': {
+          'meat': 1,
+          'mushroom': 1,
+          'vegetable': 1,
+          'cayenne pepper': 1
+        }
       },
       {
-        'name': 'strawberry cake',
-        'recipe': [
-          'strawberry',
-          'sugar',
-          'egg',
-          'cream',
+        'name': 'milk pudding',
+        'recipes': [
+          'ice cube',
+          'honey',
           'milk'
-        ]
+        ],
+        'recipeObj': {
+          'ice cube': 1,
+          'honey': 1,
+          'milk': 1
+        }
       }
     ]
   }
@@ -47,14 +64,19 @@ class App extends Component {
     })
   }
 
-  findMatches(wordToMatch, dishes) {
+  findMatches(wordToMatch, dishes, inputBoxName) {
     return dishes.filter(dish => {
       if (wordToMatch === '\\') {
         wordToMatch = "";
       }
-      // here we need to figure out if the title or article number matches what was searched
       const regex = new RegExp(wordToMatch, 'gi');
-      return dish.name.match(regex);
+      // here we need to figure out if the title or article number matches what was searched
+
+      if(inputBoxName === 'dish'){
+        return dish.name.match(regex);
+      } else if (inputBoxName === 'ingredient') {
+        return dish.recipes.filter(recipe => recipe.match(regex)).toString();
+      }
     });
   }
 
@@ -62,8 +84,8 @@ class App extends Component {
     e.preventDefault();
     const value = e.target.value;
     const dishes = this.state.dishes;
-    const matchArray = this.findMatches(value, dishes);
-    console.log(matchArray)
+    const inputBoxName = e.target.name;
+    const matchArray = this.findMatches(value, dishes, inputBoxName);
     this.setState({ 
       filterDishes: matchArray
     })
@@ -76,7 +98,7 @@ class App extends Component {
         <li key={dish.name}>
           {dish.name}
           <ul>
-              {dish.recipe.map(recipe => {
+              {dish.recipes.map(recipe => {
                 return (
                   <li key={recipe}>{recipe}</li>
                 )
@@ -91,7 +113,10 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <SearchBar dishes={dishes} filterDishes={list} onChangeSearch={this.onChangeSearch} />
+          <SearchBar 
+            dishes={dishes} 
+            filterDishes={list} 
+            onChangeSearch={this.onChangeSearch} />
           <ResultList filterDishes={list} />
         </header>
       </div>
