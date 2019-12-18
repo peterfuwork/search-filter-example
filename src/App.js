@@ -66,18 +66,12 @@ class App extends Component {
 
   findMatches(wordToMatch, dishes, inputBoxName) {
     return dishes.filter(dish => {
-      let regex;
-      try {
-        regex = new RegExp(wordToMatch, 'gi');
-      }
-      catch(e) {
-        console.log(e.message);
-      }
-      // here we need to figure out if the title or article number matches what was searched
       if(inputBoxName === 'dish'){
-        return dish.name.match(regex);
+        return dish.name.includes(wordToMatch)
       } else if (inputBoxName === 'ingredient') {
-        return dish.recipes.filter(recipe => recipe.match(regex)).toString();
+        let ingredientsStr = '';
+        dish.recipes.map(recipe => ingredientsStr += recipe + ' ')
+        return ingredientsStr.includes(wordToMatch)
       } else {
         return null;
       }
@@ -90,6 +84,7 @@ class App extends Component {
     const dishes = this.state.dishes;
     const inputBoxName = e.target.name;
     const matchArray = this.findMatches(value, dishes, inputBoxName);
+
     this.setState({ 
       filterDishes: matchArray
     })
@@ -112,8 +107,6 @@ class App extends Component {
       );
     });
 
-    
-    
     return (
       <div className="App">
         <header className="App-header">
