@@ -66,16 +66,20 @@ class App extends Component {
 
   findMatches(wordToMatch, dishes, inputBoxName) {
     return dishes.filter(dish => {
-      if (wordToMatch === '\\') {
-        wordToMatch = "";
+      let regex;
+      try {
+        regex = new RegExp(wordToMatch, 'gi');
       }
-      const regex = new RegExp(wordToMatch, 'gi');
+      catch(e) {
+        console.log(e.message);
+      }
       // here we need to figure out if the title or article number matches what was searched
-
       if(inputBoxName === 'dish'){
         return dish.name.match(regex);
       } else if (inputBoxName === 'ingredient') {
         return dish.recipes.filter(recipe => recipe.match(regex)).toString();
+      } else {
+        return null;
       }
     });
   }
