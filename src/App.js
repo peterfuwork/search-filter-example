@@ -65,13 +65,15 @@ class App extends Component {
   }
 
   findMatches(wordToMatch, dishes, inputBoxName) {
+    const newWord = wordToMatch.trim().replace(/\s/g, '');
     return dishes.filter(dish => {
       if(inputBoxName === 'dish'){
-        return dish.name.includes(wordToMatch)
+        return dish.name.trim().replace(/\s/g, '').includes(newWord)
       } else if (inputBoxName === 'ingredient') {
         let ingredientsStr = '';
-        dish.recipes.map(recipe => ingredientsStr += recipe + ' ')
-        return ingredientsStr.includes(wordToMatch)
+        dish.recipes.map(recipe => ingredientsStr += recipe)
+        console.log(ingredientsStr.trim().replace(/\s/g, ''))
+        return ingredientsStr.trim().replace(/\s/g, '').includes(newWord)
       } else {
         return null;
       }
@@ -84,7 +86,6 @@ class App extends Component {
     const dishes = this.state.dishes;
     const inputBoxName = e.target.name;
     const matchArray = this.findMatches(value, dishes, inputBoxName);
-
     this.setState({ 
       filterDishes: matchArray
     })
