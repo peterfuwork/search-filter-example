@@ -1,101 +1,28 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import SearchBar from './SearchBar';
 import ResultList from './ResultList';
+import API from './api';
 import './App.css';
 
 class App extends Component {
   state = {
     filterDishes:[],
-    checkedIngredients:[],
-    dishes: [
-      {
-        'name': 'golden corn fritter',
-        'recipes': [
-          'corn'
-        ],
-        'recipeObj': {
-          'corn': 4
-        }
-      },
-      {
-        'name': 'honey egg drop soup',
-        'recipes': [
-          'honey',
-          'egg'
-        ],
-        'recipeObj': {
-          'honey': 2,
-          'egg': 2
-        }
-      },
-      {
-        'name': 'spicy pot',
-        'recipes': [
-          'meat',
-          'mushroom',
-          'vegetable',
-          'cayenne pepper'
-        ],
-        'recipeObj': {
-          'meat': 1,
-          'mushroom': 1,
-          'vegetable': 1,
-          'cayenne pepper': 1
-        }
-      },
-      {
-        'name': 'milk pudding',
-        'recipes': [
-          'ice cube',
-          'honey',
-          'milk'
-        ],
-        'recipeObj': {
-          'ice cube': 1,
-          'honey': 1,
-          'milk': 1
-        }
-      },
-      {
-        'name': '熱水',
-        'recipes': [
-          '冰塊'
-        ],
-        'recipeObj': {
-          '冰塊': 4
-        }
-      },
-      {
-        'name': '蜂糖水',
-        'recipes': [
-          '冰塊',
-          '蜂蜜'
-        ],
-        'recipeObj': {
-          '冰塊': 3,
-          '蜂蜜': 1
-        }
-      },
-      {
-        'name': '甜菜粥',
-        'recipes': [
-          '蜂蜜',
-          '油菜'
-        ],
-        'recipeObj': {
-          '蜂蜜': 2,
-          '油菜': 2
-        }
-      }
-
-    ]
+    checkedIngredients:[]
   }
 
-  componentDidMount() {
+  async componentDidMount() {
+
+    const res = await axios.get(API.api);
+    const dishes = res.data;
+    
     this.setState({
-      filterDishes: this.state.dishes
+      dishes,
+      filterDishes: dishes
     })
   }
+
+  
 
   findMatches(wordToMatch, dishes, inputBoxName) {
     const newWord = wordToMatch.trim().replace(/\s/g, '');
@@ -160,12 +87,15 @@ class App extends Component {
     const { dishes, filterDishes } = this.state;
     const list = filterDishes.map(dish => {
       return (
-        <li key={dish.name}>
-          {dish.name}
-          <ul>
+        <li className="dish-list" key={dish.name}>
+          <div className="dish-img-wrapper">
+            <img className="dish-img" src="https://via.placeholder.com/150" />
+          </div>
+          <h4>{dish.name}</h4>
+          <ul className="recipes">
               {dish.recipes.map(recipe => {
                 return (
-                  <li key={recipe}>{recipe}</li>
+                  <li className="recipe-list" key={recipe}>{recipe}</li>
                 )
               })}
           </ul>
@@ -177,7 +107,6 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <SearchBar 
-            dishes={dishes} 
             filterDishes={list} 
             onChangeSearch={this.onChangeSearch}
             onHandleChange={this.onHandleChange} />

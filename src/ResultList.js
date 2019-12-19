@@ -3,7 +3,7 @@ import React from 'react';
 function ResultList(props) {
     const { filterDishes } = props;
     return (
-        <ul>
+        <ul className="dishes">
             { filterDishes }
         </ul>
     );
