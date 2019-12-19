@@ -6,6 +6,7 @@ import './App.css';
 class App extends Component {
   state = {
     filterDishes:[],
+    checkedIngredients:[],
     dishes: [
       {
         'name': 'golden corn fritter',
@@ -54,7 +55,39 @@ class App extends Component {
           'honey': 1,
           'milk': 1
         }
+      },
+      {
+        'name': '熱水',
+        'recipes': [
+          '冰塊'
+        ],
+        'recipeObj': {
+          '冰塊': 4
+        }
+      },
+      {
+        'name': '蜂糖水',
+        'recipes': [
+          '冰塊',
+          '蜂蜜'
+        ],
+        'recipeObj': {
+          '冰塊': 3,
+          '蜂蜜': 1
+        }
+      },
+      {
+        'name': '甜菜粥',
+        'recipes': [
+          '蜂蜜',
+          '油菜'
+        ],
+        'recipeObj': {
+          '蜂蜜': 2,
+          '油菜': 2
+        }
       }
+
     ]
   }
 
@@ -80,6 +113,17 @@ class App extends Component {
     });
   }
 
+  checkToMatches(matchesIngredientsArr, dishes) {
+    const matchArray = dishes.filter(dish => {
+      return matchesIngredientsArr.every(value => {
+        return dish.recipes.indexOf(value) !== -1;
+      })
+    });
+    this.setState({ 
+      filterDishes: matchArray
+    })
+  }
+
   onChangeSearch = (e) => {
     e.preventDefault();
     const value = e.target.value;
@@ -89,6 +133,27 @@ class App extends Component {
     this.setState({ 
       filterDishes: matchArray
     })
+  }
+
+  onHandleChange = (e) => {
+
+    const checkedItem = e.target.name;
+    const isChecked = e.target.checked;
+    const dishes = this.state.dishes;
+
+    if(isChecked === true) {
+      this.setState({
+        checkedIngredients: [...this.state.checkedIngredients, checkedItem]
+      }, () => {
+        this.checkToMatches(this.state.checkedIngredients, dishes);
+      });
+    } else if (isChecked === false) {
+      this.setState({
+        checkedIngredients: this.state.checkedIngredients.filter((val) => val !== checkedItem)
+      }, () => {
+        this.checkToMatches(this.state.checkedIngredients, dishes);
+      });
+    }
   }
 
   render() {
@@ -114,7 +179,8 @@ class App extends Component {
           <SearchBar 
             dishes={dishes} 
             filterDishes={list} 
-            onChangeSearch={this.onChangeSearch} />
+            onChangeSearch={this.onChangeSearch}
+            onHandleChange={this.onHandleChange} />
           <ResultList filterDishes={list} />
         </header>
       </div>
