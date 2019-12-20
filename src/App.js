@@ -10,7 +10,7 @@ class App extends Component {
     filteredDishes:[],
     checkedIngredients:[],
     currentPage: 1,
-    dishPerPage: 6,
+    dishPerPage: 4,
   }
 
   async componentDidMount() {
@@ -48,7 +48,8 @@ class App extends Component {
       })
     });
     this.setState({ 
-      filteredDishes: matchArray
+      filteredDishes: matchArray,
+      currentPage: 1
     })
   }
 
