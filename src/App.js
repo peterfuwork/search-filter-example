@@ -10,7 +10,7 @@ class App extends Component {
     filteredDishes:[],
     checkedIngredients:[],
     currentPage: 1,
-    dishPerPage: 4,
+    dishPerPage: 12,
   }
 
   async componentDidMount() {
@@ -99,19 +99,24 @@ class App extends Component {
     const currentDishes = filteredDishes.slice(indexOfFirstDish, indexOfLastDish);
 
     const renderDish = currentDishes.map(dish => {
+      console.log(dish)
       return (
-        <li className="dish-list" key={dish.name}>
-          <div className="dish-img-wrapper">
-            <img className="dish-img" src="https://via.placeholder.com/150" />
+        <li className="col-sm-4 dish-list" key={dish.name}>
+          <div className="border">
+            <div className="dish-img-wrapper">
+              <img className="dish-img" src="https://via.placeholder.com/150" />
+            </div>
+            <div className="information">
+              <h4>{dish.name}</h4>
+              <ul className="recipes">
+                  {dish.recipes.map(recipe => {
+                    return (
+                      <li className="recipe-list" key={recipe}>{recipe},&nbsp;</li>
+                    )
+                  })}
+              </ul>
+            </div>
           </div>
-          <h4>{dish.name}</h4>
-          <ul className="recipes">
-              {dish.recipes.map(recipe => {
-                return (
-                  <li className="recipe-list" key={recipe}>{recipe}</li>
-                )
-              })}
-          </ul>
         </li>
       );
     });

@@ -12,10 +12,6 @@
   color: #61dafb;
 }
 
-.checkboxes {
-
-}
-
 .checkboxes .fieldset {
   margin: 1rem;
 }
@@ -26,41 +22,60 @@
 }
 
 .dishes {
-  padding:0 1rem;
-  display: flex;
-  flex-direction:column;
+  padding:0;
 }
 
 .dishes .dish-list {
-  border-bottom: 1px solid #fff;
-  border-left: 1px solid #fff;
-  border-right: 1px solid #fff;
-  min-height: 200px;
+  margin: 1rem 0;
+  list-style-type: none;
 }
 
-.dishes .dish-list:first-child {
-  border-top: 1px solid #fff;
-}
-
-.dishes .dish-list h4 {
-  margin:0;
-  padding: 1rem;
-  display: flex;
+.dishes .dish-list:nth-child(3n+1){
+  clear: both; 
 }
 
 .dishes .dish-list .dish-img-wrapper {
-  float:right;
-  margin:1rem;
+  text-align: center;
+  max-width: 100px;
+  display: inline-block;
+}
+
+.dishes .dish-list .dish-img-wrapper img {
+  max-width:100px;
+  vertical-align: top;
+}
+
+.dishes .dish-list .border {
+  border:1px solid #fff;
+  position: relative;
+  display:flex;
+  flex-direction: row;
+}
+
+.dishes .dish-list .information {
+  vertical-align: top;
+  margin:.7rem;
+  font-size:1rem;
+  line-height: 1.4;
+  max-width: 180px;
+}
+
+.dishes .dish-list .information h4 {
+  margin:0;
+  font-size: 1.2rem;
+  display: flex;
 }
 
 
 .dishes .dish-list .recipes {
   color:#61dafb;
   display: inline-block;
+  padding: 0;
+  list-style: none;
 }
 
 .dishes .dish-list .recipes .recipe-list {
-  display: list-item;
+  display: inline;
 }
 
 .pagination {
