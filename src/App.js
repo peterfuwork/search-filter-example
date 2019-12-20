@@ -114,7 +114,7 @@ class App extends Component {
                     return (
                       <li className="recipe-list" key={recipe}>
                         {recipe}:
-                        <span className="quantity">{quantity[recipe]}</span>,&nbsp;
+                        <span className="quantity">&nbsp;{quantity[recipe]}</span>,&nbsp;
                       </li>
                     )
                   })}
