@@ -1,10 +1,10 @@
 import React from 'react';
 
 function ResultList(props) {
-    const { filterDishes } = props;
+    const { filteredDishes } = props;
     return (
         <ul className="dishes">
-            { filterDishes }
+            { filteredDishes }
         </ul>
     );
 }

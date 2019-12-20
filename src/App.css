@@ -63,4 +63,23 @@
   display: list-item;
 }
 
+.pagination {
+  margin:1rem;
+  text-align: center;
+}
+
+.pagination span {
+  padding:1rem;
+  cursor:pointer;
+}
+
+.pagination span:hover {
+  color:#61dafb;
+  background-color:lightgoldenrodyellow;
+}
+
+.pagination span.active {
+  color:#61dafb;
+}
+
 

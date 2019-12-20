@@ -7,8 +7,10 @@ import './App.css';
 
 class App extends Component {
   state = {
-    filterDishes:[],
-    checkedIngredients:[]
+    filteredDishes:[],
+    checkedIngredients:[],
+    currentPage: 1,
+    dishPerPage: 6,
   }
 
   async componentDidMount() {
@@ -18,7 +20,7 @@ class App extends Component {
     
     this.setState({
       dishes,
-      filterDishes: dishes
+      filteredDishes: dishes
     })
   }
 
@@ -32,7 +34,6 @@ class App extends Component {
       } else if (inputBoxName === 'ingredient') {
         let ingredientsStr = '';
         dish.recipes.map(recipe => ingredientsStr += recipe)
-        console.log(ingredientsStr.trim().replace(/\s/g, ''))
         return ingredientsStr.trim().replace(/\s/g, '').includes(newWord)
       } else {
         return null;
@@ -47,7 +48,7 @@ class App extends Component {
       })
     });
     this.setState({ 
-      filterDishes: matchArray
+      filteredDishes: matchArray
     })
   }
 
@@ -58,7 +59,7 @@ class App extends Component {
     const inputBoxName = e.target.name;
     const matchArray = this.findMatches(value, dishes, inputBoxName);
     this.setState({ 
-      filterDishes: matchArray
+      filteredDishes: matchArray
     })
   }
 
@@ -83,9 +84,20 @@ class App extends Component {
     }
   }
 
+  onClickPage = (event) => {
+    this.setState({
+      currentPage: Number(event.target.id)
+    })
+  }
+
   render() {
-    const { dishes, filterDishes } = this.state;
-    const list = filterDishes.map(dish => {
+    const { currentPage, dishPerPage, filteredDishes } = this.state;
+
+    const indexOfLastDish = currentPage * dishPerPage;
+    const indexOfFirstDish = indexOfLastDish - dishPerPage;
+    const currentDishes = filteredDishes.slice(indexOfFirstDish, indexOfLastDish);
+
+    const renderDish = currentDishes.map(dish => {
       return (
         <li className="dish-list" key={dish.name}>
           <div className="dish-img-wrapper">
@@ -103,15 +115,38 @@ class App extends Component {
       );
     });
 
+    const pageNumbers = [];
+    for (let i = 1; i <= Math.ceil(filteredDishes.length / dishPerPage); i++) {
+        pageNumbers.push(i);
+    }
+
+    const renderPageNumbers = pageNumbers.map(number => {
+        return (
+            <span
+                className={(currentPage === number ? 'active ' : '')}
+                key={number}
+                id={number}
+                onClick={this.onClickPage}
+            >
+                {number}
+            </span>
+        );
+    });
+
+    
+
     return (
       <div className="App">
-        <header className="App-header">
+        <div className="App-header">
           <SearchBar 
-            filterDishes={list} 
+            filteredDishes={renderDish} 
             onChangeSearch={this.onChangeSearch}
             onHandleChange={this.onHandleChange} />
-          <ResultList filterDishes={list} />
-        </header>
+          <div className="pagination">
+            { renderPageNumbers }
+          </div>
+          <ResultList filteredDishes={renderDish} />
+        </div>
       </div>
     );
   }
