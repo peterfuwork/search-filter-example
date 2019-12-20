@@ -44,6 +44,10 @@ function SearchBar(props) {
             <label htmlFor="魚類">魚類</label>
           </div>
           <div className="ingredient-checkbox">
+            <input type="checkbox" id="特定魚類" name="特定魚類" value="特定魚類" onChange={(e) => props.onHandleChange(e)} />
+            <label htmlFor="特定魚類">特定魚類</label>
+          </div>
+          <div className="ingredient-checkbox">
             <input type="checkbox" id="草莓" name="草莓" value="草莓" onChange={(e) => props.onHandleChange(e)} />
             <label htmlFor="草莓">草莓</label>
           </div>
