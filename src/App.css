@@ -75,7 +75,12 @@
 }
 
 .dishes .dish-list .recipes .recipe-list {
-  display: inline;
+  display: inline-block;
+}
+
+.dishes .dish-list .recipes .recipe-list .quantity {
+  font-size:.7rem;
+  color:plum;
 }
 
 .pagination {

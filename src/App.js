@@ -110,8 +110,12 @@ class App extends Component {
               <h4>{dish.name}</h4>
               <ul className="recipes">
                   {dish.recipes.map(recipe => {
+                    const quantity = dish.recipeObj;
                     return (
-                      <li className="recipe-list" key={recipe}>{recipe},&nbsp;</li>
+                      <li className="recipe-list" key={recipe}>
+                        {recipe}:
+                        <span className="quantity">{quantity[recipe]}</span>,&nbsp;
+                      </li>
                     )
                   })}
               </ul>
