@@ -3,23 +3,24 @@ import axios from 'axios';
 import SearchBar from './SearchBar';
 import ResultList from './ResultList';
 import API from './api';
+import LoadingImg from './assets/loading.gif'
 import './App.css';
 
 class App extends Component {
+  
   state = {
     filteredDishes:[],
     checkedIngredients:[],
+    checkedUsages:[],
     currentPage: 1,
-    dishPerPage: 12,
+    dishPerPage: 12
   }
 
   async componentDidMount() {
 
     const res = await axios.get(API.api);
     const dishes = res.data;
-    
     this.setState({
-      dishes,
       filteredDishes: dishes
     })
   }
@@ -64,7 +65,7 @@ class App extends Component {
     })
   }
 
-  onHandleChange = (e) => {
+  onHandleChangeIngredients = (e) => {
 
     const checkedItem = e.target.name;
     const isChecked = e.target.checked;
@@ -85,6 +86,10 @@ class App extends Component {
     }
   }
 
+  onHandleChangeUsages = (e) => {
+    console.log(e.target.value)
+  }
+
   onClickPage = (event) => {
     this.setState({
       currentPage: Number(event.target.id)
@@ -99,12 +104,18 @@ class App extends Component {
     const currentDishes = filteredDishes.slice(indexOfFirstDish, indexOfLastDish);
 
     const renderDish = currentDishes.map(dish => {
-      console.log(dish)
       return (
-        <li className="col-sm-4 dish-list" key={dish.name}>
+        <li className="col-sm-6 dish-list" key={dish.name}>
           <div className="border">
             <div className="dish-img-wrapper">
-              <img className="dish-img" src="https://via.placeholder.com/150" />
+              { 
+                dish.image === " " ? 
+                <img className="dish-img-placeholder" src="https://via.placeholder.com/150" /> :
+                <img 
+                 className="dish-img"
+                 data-image={dish.name}
+                  src={dish.image} />
+              }
             </div>
             <div className="information">
               <h4>{dish.name}</h4>
@@ -114,10 +125,22 @@ class App extends Component {
                     return (
                       <li className="recipe-list" key={recipe}>
                         {recipe}:
-                        <span className="quantity">&nbsp;{quantity[recipe]}</span>,&nbsp;
+                        <span className="quantity">&nbsp;{quantity[recipe]}</span>
                       </li>
                     )
                   })}
+              </ul>
+              <br />
+              <ul className="usages">
+                {dish.usages.map(usage => {
+                  const desc = dish.usageObj;
+                  return (
+                  <li className="usage-list" key={usage}>
+                    {usage}:
+                    <span className="desc">&nbsp;{desc[usage]}</span>
+                  </li>
+                  )
+                })}
               </ul>
             </div>
           </div>
@@ -151,7 +174,8 @@ class App extends Component {
           <SearchBar 
             filteredDishes={renderDish} 
             onChangeSearch={this.onChangeSearch}
-            onHandleChange={this.onHandleChange} />
+            onHandleChangeIngredients={this.onHandleChangeIngredients}
+            onHandleChangeUsages={this.onHandleChangeUsages} />
           <div className="pagination">
             { renderPageNumbers }
           </div>

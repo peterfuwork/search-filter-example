@@ -12,6 +12,10 @@
   color: #61dafb;
 }
 
+.checkboxes input {
+  color:#000;
+}
+
 .checkboxes .fieldset {
   margin: 1rem;
 }
@@ -30,22 +34,34 @@
   list-style-type: none;
 }
 
-.dishes .dish-list:nth-child(3n+1){
+.dishes .dish-list:nth-child(2n+3){
   clear: both; 
 }
 
+/* .dishes .dish-list:nth-child(3n+1){
+  clear: both; 
+} */
+
 .dishes .dish-list .dish-img-wrapper {
   text-align: center;
-  max-width: 100px;
-  display: inline-block;
+  max-width: 200px;
+  display: flex;
+  align-items: center;
+}
+
+@media(max-width:767px) {
+  .dishes .dish-list .dish-img-wrapper {
+    max-width: 150px;
+  }
 }
 
 .dishes .dish-list .dish-img-wrapper img {
-  max-width:100px;
+  max-width:100%;
   vertical-align: top;
 }
 
 .dishes .dish-list .border {
+  height: 225px;
   border:1px solid #fff;
   position: relative;
   display:flex;
@@ -57,7 +73,7 @@
   margin:.7rem;
   font-size:1rem;
   line-height: 1.4;
-  max-width: 180px;
+  max-width: 100%;
 }
 
 .dishes .dish-list .information h4 {
@@ -75,10 +91,26 @@
 }
 
 .dishes .dish-list .recipes .recipe-list {
-  display: inline-block;
+  display: block;
 }
 
 .dishes .dish-list .recipes .recipe-list .quantity {
+  font-size:.9rem;
+  color:plum;
+}
+
+.dishes .dish-list .usages {
+  color:#fff952;
+  display: inline-block;
+  padding: 0;
+  list-style: none;
+}
+
+.dishes .dish-list .usages .usage-list {
+  display: block;
+}
+
+.dishes .dish-list .usages .usage-list .desc {
   font-size:.9rem;
   color:plum;
 }
@@ -91,6 +123,7 @@
 .pagination span {
   padding:1rem;
   cursor:pointer;
+  display: inline-block;
 }
 
 .pagination span:hover {
