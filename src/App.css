@@ -12,19 +12,6 @@
   color: #61dafb;
 }
 
-.checkboxes input {
-  color:#000;
-}
-
-.checkboxes .fieldset {
-  margin: 1rem;
-}
-
-.checkboxes .ingredient-checkbox {
-  display: inline-block;
-  margin: .5rem;
-}
-
 .dishes {
   padding:0;
 }
@@ -115,6 +102,12 @@
   color:plum;
 }
 
+iron-image {
+  width: 150px;
+  height: 90px;
+  background-color: #282c34;
+}
+
 .pagination {
   margin:1rem;
   text-align: center;
@@ -133,6 +126,48 @@
 .pagination span.active {
   color:#61dafb;
   font-weight:bold;
+}
+
+.usage-checkbox {
+  display:inline-block;
+  margin: .5rem;
+}
+
+.sorting {
+  margin: 1rem 0;
+}
+
+.sorting .link {
+  color:#fff;
+}
+
+.sorting .checkboxes {
+  margin: 1rem 0;
+}
+
+.sorting .checkboxes input {
+  color:#000;
+}
+
+.sorting .checkboxes input[type="text"] {
+  display: block;
+  margin: 1rem 0;
+}
+
+.sorting .checkboxes input[type=checkbox],
+.sorting .checkboxes input[type=radio] {
+  margin-right: 5px;
+  vertical-align: top;
+}
+
+
+.sorting .checkboxes .fieldset {
+  margin: 1rem;
+}
+
+.sorting .checkboxes .ingredient-checkbox {
+  display: inline-block;
+  margin: .5rem;
 }
 
 

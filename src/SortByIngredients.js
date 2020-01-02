@@ -1,6 +1,6 @@
 import React from 'react';
 
-function SearchBar(props) {
+const SortByIngredients = (props) => {
     return (
       <div className="checkboxes">
         <input type="text" name="dish" placeholder="Search By Dish" onChange={(e) => props.onChangeSearch(e)} />
@@ -132,15 +132,8 @@ function SearchBar(props) {
             <label htmlFor="特殊備註">特殊備註</label>
           </div>
         </fieldset>
-        <fieldset className="fieldset">
-        <legend>選擇需要的屬性</legend>
-          <div className="usage-checkbox">
-            <input type="checkbox" id="回復血量" name="回復血量" value="回復血量" onChange={(e) => props.onHandleChangeUsages(e)} />
-            <label htmlFor="回復血量">回復血量</label>
-          </div>
-        </fieldset>
       </div>
     );
 }
 
-export default SearchBar;
+export default SortByIngredients;

@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import SearchBar from './SearchBar';
-import ResultList from './ResultList';
+import { BrowserRouter, Route } from "react-router-dom";
+import Page from './Page';
 import API from './api';
-import LoadingImg from './assets/loading.gif'
+// import LoadingImg from './assets/loading.gif'
 import './App.css';
 
 class App extends Component {
   
   state = {
+    dishes:[],
     filteredDishes:[],
     checkedIngredients:[],
     checkedUsages:[],
@@ -21,6 +22,7 @@ class App extends Component {
     const res = await axios.get(API.api);
     const dishes = res.data;
     this.setState({
+      dishes,
       filteredDishes: dishes
     })
   }
@@ -42,10 +44,22 @@ class App extends Component {
     });
   }
 
-  checkToMatches(matchesIngredientsArr, dishes) {
+  checkIngredientsToMatches(matchesIngredientsArr, dishes) {
     const matchArray = dishes.filter(dish => {
       return matchesIngredientsArr.every(value => {
         return dish.recipes.indexOf(value) !== -1;
+      })
+    });
+    this.setState({ 
+      filteredDishes: matchArray,
+      currentPage: 1
+    })
+  }
+
+  checkUsagesToMatches(matchesIngredientsArr, dishes) {
+    const matchArray = dishes.filter(dish => {
+      return matchesIngredientsArr.every(value => {
+        return dish.usages.indexOf(value) !== -1;
       })
     });
     this.setState({ 
@@ -75,113 +89,75 @@ class App extends Component {
       this.setState({
         checkedIngredients: [...this.state.checkedIngredients, checkedItem]
       }, () => {
-        this.checkToMatches(this.state.checkedIngredients, dishes);
+        this.checkIngredientsToMatches(this.state.checkedIngredients, dishes);
       });
     } else if (isChecked === false) {
       this.setState({
         checkedIngredients: this.state.checkedIngredients.filter((val) => val !== checkedItem)
       }, () => {
-        this.checkToMatches(this.state.checkedIngredients, dishes);
+        this.checkIngredientsToMatches(this.state.checkedIngredients, dishes);
       });
     }
   }
 
   onHandleChangeUsages = (e) => {
-    console.log(e.target.value)
+    const checkedItem = e.target.name;
+    const isChecked = e.target.checked;
+    const dishes = this.state.dishes;
+
+    if(isChecked === true) {
+      this.setState({
+        checkedUsages: [...this.state.checkedUsages, checkedItem]
+      }, () => {
+        this.checkUsagesToMatches(this.state.checkedUsages, dishes);
+      });
+    } else if (isChecked === false) {
+      this.setState({
+        checkedUsages: this.state.checkedUsages.filter((val) => val !== checkedItem)
+      }, () => {
+        this.checkUsagesToMatches(this.state.checkedUsages, dishes);
+      });
+    }
+
+
   }
 
   onClickPage = (event) => {
+    console.log(event.target.id)
     this.setState({
       currentPage: Number(event.target.id)
     })
   }
 
   render() {
-    const { currentPage, dishPerPage, filteredDishes } = this.state;
-
-    const indexOfLastDish = currentPage * dishPerPage;
-    const indexOfFirstDish = indexOfLastDish - dishPerPage;
-    const currentDishes = filteredDishes.slice(indexOfFirstDish, indexOfLastDish);
-
-    const renderDish = currentDishes.map(dish => {
-      return (
-        <li className="col-sm-6 dish-list" key={dish.name}>
-          <div className="border">
-            <div className="dish-img-wrapper">
-              { 
-                dish.image === " " ? 
-                <img className="dish-img-placeholder" src="https://via.placeholder.com/150" /> :
-                <img 
-                 className="dish-img"
-                 data-image={dish.name}
-                  src={dish.image} />
-              }
-            </div>
-            <div className="information">
-              <h4>{dish.name}</h4>
-              <ul className="recipes">
-                  {dish.recipes.map(recipe => {
-                    const quantity = dish.recipeObj;
-                    return (
-                      <li className="recipe-list" key={recipe}>
-                        {recipe}:
-                        <span className="quantity">&nbsp;{quantity[recipe]}</span>
-                      </li>
-                    )
-                  })}
-              </ul>
-              <br />
-              <ul className="usages">
-                {dish.usages.map(usage => {
-                  const desc = dish.usageObj;
-                  return (
-                  <li className="usage-list" key={usage}>
-                    {usage}:
-                    <span className="desc">&nbsp;{desc[usage]}</span>
-                  </li>
-                  )
-                })}
-              </ul>
-            </div>
-          </div>
-        </li>
-      );
-    });
-
-    const pageNumbers = [];
-    for (let i = 1; i <= Math.ceil(filteredDishes.length / dishPerPage); i++) {
-        pageNumbers.push(i);
-    }
-
-    const renderPageNumbers = pageNumbers.map(number => {
-        return (
-            <span
-                className={(currentPage === number ? 'active ' : '')}
-                key={number}
-                id={number}
-                onClick={this.onClickPage}
-            >
-                {number}
-            </span>
-        );
-    });
-
-    
-
     return (
-      <div className="App">
-        <div className="App-header">
-          <SearchBar 
-            filteredDishes={renderDish} 
-            onChangeSearch={this.onChangeSearch}
-            onHandleChangeIngredients={this.onHandleChangeIngredients}
-            onHandleChangeUsages={this.onHandleChangeUsages} />
-          <div className="pagination">
-            { renderPageNumbers }
+      <BrowserRouter>
+        <div className="App">
+          <div className="App-header">
+              <Route  
+                  exact 
+                  path="/" 
+                  render={() => 
+                    <Page
+                      onClickPage={this.onClickPage}
+                      onChangeSearch={this.onChangeSearch}
+                      onHandleChangeIngredients={this.onHandleChangeIngredients}
+                      {...this.state} /> 
+                  }
+              />
+              <Route  
+                  exact 
+                  path="/SortByUsages" 
+                  render={() => 
+                    <Page
+                      onClickPage={this.onClickPage}
+                      onHandleChangeUsages={this.onHandleChangeUsages}
+                      {...this.state} /> 
+                  }
+              />
           </div>
-          <ResultList filteredDishes={renderDish} />
         </div>
-      </div>
+      </BrowserRouter>
     );
   }
 }
