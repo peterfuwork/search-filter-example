@@ -34,6 +34,7 @@
   max-width: 200px;
   display: flex;
   align-items: center;
+  background-color:#1d1d1d;
 }
 
 @media(max-width:767px) {
@@ -43,8 +44,14 @@
 }
 
 .dishes .dish-list .dish-img-wrapper img {
-  max-width:100%;
+  max-width:200px;
   vertical-align: top;
+}
+
+@media(max-width:767px) {
+  .dishes .dish-list .dish-img-wrapper img {
+    max-width:100%;
+  }
 }
 
 .dishes .dish-list .border {
