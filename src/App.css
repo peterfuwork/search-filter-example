@@ -60,6 +60,8 @@
   position: relative;
   display:flex;
   flex-direction: row;
+  border-radius: 15px;
+  overflow: hidden;
 }
 
 .dishes .dish-list .information {
@@ -197,6 +199,28 @@ iron-image {
   bottom: 3px;
 }
 
+.sorting .checkboxes .deselect-checkbox .checkbox {
+  display:none;
+}
+
+.sorting .checkboxes .deselect-checkbox label {
+  cursor:pointer;
+}
+
+.sorting .checkboxes .deselect-checkbox {
+  display: inline-block;
+  margin: .5rem;
+  border: 1px solid plum;
+  padding: .4rem .8rem;
+  font-size: 1rem;
+  color:plum;
+}
+
+.sorting .checkboxes .deselect-checkbox:hover {
+  color:#1d1d1d;
+  background-color:plum;
+}
+
 
 .sorting .checkboxes .fieldset {
   margin: 0;
@@ -207,6 +231,15 @@ iron-image {
   display: inline-block;
   margin: .5rem;
   border: 1px solid #ccc;
+  padding: .4rem .8rem;
+  font-size: 1rem;
+  border-radius: 10px;
+}
+
+.sorting .checkboxes .deselect-checkbox {
+  display: inline-block;
+  margin: .5rem;
+  border: 1px solid plum;
   padding: .4rem .8rem;
   font-size: 1rem;
 }

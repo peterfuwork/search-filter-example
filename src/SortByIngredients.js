@@ -160,6 +160,10 @@ const SortByIngredients = (props) => {
             <label className="ingredient-label" htmlFor="特殊備註">特殊備註</label>&nbsp;
             <img className="ingredient-image" src="https://www.dropbox.com/s/z9gdvkhv14m61tl/IMG_0263.png?raw=1" alt="特殊備註" />
           </div>
+          <div className="deselect-checkbox">
+            <input className="checkbox" type="checkbox" id="取消所有選取" name="取消所有選取" value="取消所有選取" onChange={() => props.resetAllCheckboxes()} />
+            <label className="ingredient-label" htmlFor="取消所有選取">取消所有選取</label>&nbsp;
+          </div>
         </fieldset>
       </div>
     );

@@ -90,6 +90,7 @@ const Page = (props) => {
                 <SortByIngredients
                     filteredDishes={renderDish} 
                     onHandleChangeIngredients={props.onHandleChangeIngredients}
+                    resetAllCheckboxes={props.resetAllCheckboxes}
                 />
               </div> :
               <div className="sorting">
@@ -98,6 +99,7 @@ const Page = (props) => {
                 <SortByUsages
                     filteredDishes={renderDish} 
                     onHandleChangeUsages={props.onHandleChangeUsages}
+                    resetAllCheckboxes={props.resetAllCheckboxes}
                 />
               </div>
             }

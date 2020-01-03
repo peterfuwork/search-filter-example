@@ -106,6 +106,7 @@ class App extends Component {
       this.setState({
         checkedUsages: [...this.state.checkedUsages, checkedItem]
       }, () => {
+        console.log(this.state.checkedUsages)
         this.checkUsagesToMatches(this.state.checkedUsages, dishes);
       });
     } else if (isChecked === false) {
@@ -123,6 +124,18 @@ class App extends Component {
     console.log(event.target.id)
     this.setState({
       currentPage: Number(event.target.id)
+    })
+  }
+
+  resetAllCheckboxes = () => {
+    const checkboxes = document.querySelectorAll('.checkbox');
+    for (var i = 0; i < checkboxes.length; i++) {
+      checkboxes[i].checked = false;
+    }
+    this.setState({
+      filteredDishes: this.state.dishes,
+      checkedUsages: [],
+      checkedIngredients: []
     })
   }
 
@@ -149,6 +162,7 @@ class App extends Component {
                     <Page
                       onClickPage={this.onClickPage}
                       onHandleChangeIngredients={this.onHandleChangeIngredients}
+                      resetAllCheckboxes={this.resetAllCheckboxes}
                       {...this.state}
                       {...props} /> 
                   }
@@ -160,6 +174,7 @@ class App extends Component {
                     <Page
                       onClickPage={this.onClickPage}
                       onHandleChangeUsages={this.onHandleChangeUsages}
+                      resetAllCheckboxes={this.resetAllCheckboxes}
                       {...this.state}
                       {...props} /> 
                   }

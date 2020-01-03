@@ -109,6 +109,10 @@ const SortByUsages = (props) => {
               <input className="checkbox" type="checkbox" id="體力上限" name="體力上限" value="體力上限" onChange={(e) => props.onHandleChangeUsages(e)} />
               <label htmlFor="體力上限">體力上限</label>
             </div>
+            <div className="deselect-checkbox">
+              <input className="checkbox" type="checkbox" id="取消所有選取" name="取消所有選取" value="取消所有選取" onChange={() => props.resetAllCheckboxes()} />
+              <label htmlFor="取消所有選取">取消所有選取</label>
+            </div>
         </fieldset>
       </div>
     );
