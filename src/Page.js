@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import SortBySearch from './SortBySearch';
 import SortByIngredients from './SortByIngredients';
 import SortByUsages from './SortByUsages';
 import ResultList from './ResultList';
@@ -77,27 +78,37 @@ const Page = (props) => {
 
     return (
         <div className="container">
-            
             {   
-                !props.onHandleChangeUsages ? 
-                <div className="sorting">
-                    <Link className="link" to="/SortByUsages">Sort By Usages</Link>
-                    <SortByIngredients
-                        filteredDishes={renderDish} 
-                        onChangeSearch={props.onChangeSearch}
-                        onHandleChangeIngredients={props.onHandleChangeIngredients}
-                        />
-                </div> :
-                <div className="sorting">
-                    <Link className="link" to="/">Sort By Ingredients</Link>
-                    <SortByUsages
-                        filteredDishes={renderDish}
-                        onHandleChangeUsages={props.onHandleChangeUsages} />
-                </div>
+              props.match.path === '/' ?
+              <div className="sorting">
+                <Link className="link" to="/SortByIngredients">Sort By Ingredients</Link><br />
+                <Link className="link" to="/SortByUsages">Sort By Usages</Link>
+                <SortBySearch
+                    filteredDishes={renderDish}
+                    onChangeSearch={props.onChangeSearch}
+                />
+              </div> :
+              props.match.path === '/SortByIngredients' ?
+              <div className="sorting">
+                <Link className="link" to="/">Sort By Search</Link><br />
+                <Link className="link" to="/SortByUsages">Sort By Usages</Link>
+                <SortByIngredients
+                    filteredDishes={renderDish} 
+                    onHandleChangeIngredients={props.onHandleChangeIngredients}
+                />
+              </div> :
+              <div className="sorting">
+                <Link className="link" to="/">Sort By Search</Link><br />
+                <Link className="link" to="/SortByIngredients">Sort By Ingredients</Link>
+                <SortByUsages
+                    filteredDishes={renderDish} 
+                    onHandleChangeUsages={props.onHandleChangeUsages}
+                />
+              </div>
             }
-                <div className="pagination">
-                    { renderPageNumbers }
-                </div>
+              <div className="pagination">
+                  { renderPageNumbers }
+              </div>
             <ResultList filteredDishes={renderDish} />
         </div>
     );

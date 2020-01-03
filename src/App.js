@@ -75,7 +75,8 @@ class App extends Component {
     const inputBoxName = e.target.name;
     const matchArray = this.findMatches(value, dishes, inputBoxName);
     this.setState({ 
-      filteredDishes: matchArray
+      filteredDishes: matchArray,
+      currentPage: 1
     })
   }
 
@@ -137,22 +138,34 @@ class App extends Component {
               <Route  
                   exact 
                   path="/" 
-                  render={() => 
+                  render={(props) => 
                     <Page
                       onClickPage={this.onClickPage}
                       onChangeSearch={this.onChangeSearch}
+                      {...this.state}
+                      {...props} /> 
+                  }
+              />
+              <Route  
+                  exact 
+                  path="/SortByIngredients" 
+                  render={(props) => 
+                    <Page
+                      onClickPage={this.onClickPage}
                       onHandleChangeIngredients={this.onHandleChangeIngredients}
-                      {...this.state} /> 
+                      {...this.state}
+                      {...props} /> 
                   }
               />
               <Route  
                   exact 
                   path="/SortByUsages" 
-                  render={() => 
+                  render={(props) => 
                     <Page
                       onClickPage={this.onClickPage}
                       onHandleChangeUsages={this.onHandleChangeUsages}
-                      {...this.state} /> 
+                      {...this.state}
+                      {...props} /> 
                   }
               />
           </div>

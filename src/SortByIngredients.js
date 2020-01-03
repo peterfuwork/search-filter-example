@@ -3,8 +3,6 @@ import React from 'react';
 const SortByIngredients = (props) => {
     return (
       <div className="checkboxes">
-        <input type="text" name="dish" placeholder="Search By Dish" onChange={(e) => props.onChangeSearch(e)} />
-        <input type="text" name="ingredient" placeholder="Search By Ingredient" onChange={(e) => props.onChangeSearch(e)} />
         <fieldset className="fieldset">
           <legend>選擇你的食材</legend>
           <div className="ingredient-checkbox">
