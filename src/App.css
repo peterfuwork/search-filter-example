@@ -153,6 +153,7 @@ iron-image {
   text-decoration: none;
   padding: .8rem;
   font-size: 1rem;
+  border-radius: 10px;
 }
 
 .sorting .link:hover,
@@ -214,6 +215,7 @@ iron-image {
   padding: .4rem .8rem;
   font-size: 1rem;
   color:plum;
+  border-radius: 10px;
 }
 
 .sorting .checkboxes .deselect-checkbox:hover {
@@ -251,7 +253,7 @@ iron-image {
 }
 
 .sorting .checkboxes .ingredient-checkbox .ingredient-image {
-  max-width:60px;
+  /* max-width:60px; */
   vertical-align: top;
 }
 
