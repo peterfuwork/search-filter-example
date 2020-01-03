@@ -34,10 +34,6 @@ class App extends Component {
     return dishes.filter(dish => {
       if(inputBoxName === 'dish'){
         return dish.name.trim().replace(/\s/g, '').includes(newWord)
-      } else if (inputBoxName === 'ingredient') {
-        let ingredientsStr = '';
-        dish.recipes.map(recipe => ingredientsStr += recipe)
-        return ingredientsStr.trim().replace(/\s/g, '').includes(newWord)
       } else {
         return null;
       }

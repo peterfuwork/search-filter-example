@@ -17,12 +17,7 @@ const Page = (props) => {
           <div className="border">
             <div className="dish-img-wrapper">
               { 
-                dish.image === " " ? 
-                <img className="dish-img-placeholder" src="https://via.placeholder.com/150" /> :
-                <img 
-                 className="dish-img"
-                 data-image={dish.name}
-                  src={dish.image} />
+                <img className="dish-img" data-image={dish.name} src={dish.image} alt={dish.name} />
               }
             </div>
             <div className="information">
@@ -81,8 +76,8 @@ const Page = (props) => {
             {   
               props.match.path === '/' ?
               <div className="sorting">
-                <Link className="link" to="/SortByIngredients">Sort By Ingredients</Link><br />
-                <Link className="link" to="/SortByUsages">Sort By Usages</Link>
+                <Link className="link" to="/SortByIngredients">搜尋食材</Link>&nbsp;&nbsp;
+                <Link className="link" to="/SortByUsages">搜尋料理屬性</Link>
                 <SortBySearch
                     filteredDishes={renderDish}
                     onChangeSearch={props.onChangeSearch}
@@ -90,16 +85,16 @@ const Page = (props) => {
               </div> :
               props.match.path === '/SortByIngredients' ?
               <div className="sorting">
-                <Link className="link" to="/">Sort By Search</Link><br />
-                <Link className="link" to="/SortByUsages">Sort By Usages</Link>
+                <Link className="link" to="/">搜尋食譜</Link>&nbsp;&nbsp;
+                <Link className="link" to="/SortByUsages">搜尋料理屬性</Link>
                 <SortByIngredients
                     filteredDishes={renderDish} 
                     onHandleChangeIngredients={props.onHandleChangeIngredients}
                 />
               </div> :
               <div className="sorting">
-                <Link className="link" to="/">Sort By Search</Link><br />
-                <Link className="link" to="/SortByIngredients">Sort By Ingredients</Link>
+                <Link className="link" to="/">搜尋食譜</Link>&nbsp;&nbsp;
+                <Link className="link" to="/SortByIngredients">搜尋食材</Link>
                 <SortByUsages
                     filteredDishes={renderDish} 
                     onHandleChangeUsages={props.onHandleChangeUsages}

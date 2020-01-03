@@ -145,7 +145,19 @@ iron-image {
 }
 
 .sorting .link {
+  display: inline-block;
   color:#fff;
+  border: 1px solid #fff;
+  text-decoration: none;
+  padding: .8rem;
+  font-size: 1rem;
+}
+
+.sorting .link:hover,
+.sorting .link:focus,
+.sorting .link:active{
+  color:#1d1d1d;
+  background-color:#fff;
 }
 
 .sorting .checkboxes {
@@ -161,20 +173,52 @@ iron-image {
   margin: 1rem 0;
 }
 
-.sorting .checkboxes input[type=checkbox],
-.sorting .checkboxes input[type=radio] {
+.sorting .checkboxes .ingredient-checkbox .checkbox {
   margin-right: 5px;
-  vertical-align: top;
+  vertical-align: middle;
+  -ms-transform: scale(1.2); /* IE */
+  -moz-transform: scale(1.2); /* FF */
+  -webkit-transform: scale(1.2); /* Safari and Chrome */
+  -o-transform: scale(1.2); /* Opera */
+  transform: scale(1.2);
+  position: relative;
+  top: 3px;
+}
+
+.sorting .checkboxes .usage-checkbox .checkbox {
+  margin-right: 5px;
+  vertical-align: middle;
+  -ms-transform: scale(1.2); /* IE */
+  -moz-transform: scale(1.2); /* FF */
+  -webkit-transform: scale(1.2); /* Safari and Chrome */
+  -o-transform: scale(1.2); /* Opera */
+  transform: scale(1.2);
+  position: relative;
+  bottom: 3px;
 }
 
 
 .sorting .checkboxes .fieldset {
-  margin: 1rem;
+  margin: 0;
 }
 
-.sorting .checkboxes .ingredient-checkbox {
+.sorting .checkboxes .ingredient-checkbox,
+.sorting .checkboxes .usage-checkbox {
   display: inline-block;
   margin: .5rem;
+  border: 1px solid #ccc;
+  padding: .4rem .8rem;
+  font-size: 1rem;
+}
+
+.sorting .checkboxes .ingredient-checkbox .ingredient-label {
+  position:relative;
+  top: 6px;
+}
+
+.sorting .checkboxes .ingredient-checkbox .ingredient-image {
+  max-width:60px;
+  vertical-align: top;
 }
 
 
