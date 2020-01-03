@@ -113,7 +113,7 @@ const SortByIngredients = (props) => {
           <div className="ingredient-checkbox">
             <input className="checkbox" type="checkbox" id="醬料" name="醬料" value="醬料" onChange={(e) => props.onHandleChangeIngredients(e)} />
             <label className="ingredient-label" htmlFor="醬料">醬料</label>&nbsp;
-            <img className="ingredient-image" src="https://www.dropbox.com/s/bb1zw6mrzgmazoy/IMG_0168.PNG?raw=1" alt="醬料" />
+            <img className="ingredient-image" src="https://www.dropbox.com/s/skhkhh0b27ywo38/IMG_0169.PNG?raw=1" alt="醬料" />
           </div>
           <div className="ingredient-checkbox">
             <input className="checkbox" type="checkbox" id="調料" name="調料" value="調料" onChange={(e) => props.onHandleChangeIngredients(e)} />
