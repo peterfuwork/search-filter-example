@@ -121,7 +121,6 @@ class App extends Component {
   }
 
   onClickPage = (event) => {
-    console.log(event.target.id)
     this.setState({
       currentPage: Number(event.target.id)
     })
@@ -139,6 +138,17 @@ class App extends Component {
     })
   }
 
+  resetWhenChangePage = (event, props) => {
+    const path = event.target.dataset.link
+    this.setState({
+      filteredDishes: this.state.dishes,
+      checkedUsages: [],
+      checkedIngredients: []
+    },() => {
+      props.history.push(path)
+    })
+  }
+
   render() {
     return (
       <BrowserRouter>
@@ -151,6 +161,7 @@ class App extends Component {
                     <Page
                       onClickPage={this.onClickPage}
                       onChangeSearch={this.onChangeSearch}
+                      resetWhenChangePage={this.resetWhenChangePage}
                       {...this.state}
                       {...props} /> 
                   }
@@ -163,6 +174,7 @@ class App extends Component {
                       onClickPage={this.onClickPage}
                       onHandleChangeIngredients={this.onHandleChangeIngredients}
                       resetAllCheckboxes={this.resetAllCheckboxes}
+                      resetWhenChangePage={this.resetWhenChangePage}
                       {...this.state}
                       {...props} /> 
                   }
@@ -175,6 +187,7 @@ class App extends Component {
                       onClickPage={this.onClickPage}
                       onHandleChangeUsages={this.onHandleChangeUsages}
                       resetAllCheckboxes={this.resetAllCheckboxes}
+                      resetWhenChangePage={this.resetWhenChangePage}
                       {...this.state}
                       {...props} /> 
                   }
