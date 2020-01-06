@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from "react-router-dom";
 import SortBySearch from './SortBySearch';
 import SortByIngredients from './SortByIngredients';
 import SortByUsages from './SortByUsages';
@@ -69,15 +68,13 @@ const Page = (props) => {
         );
     });
 
-    console.log(props)
-
     return (
         <div className="container">
             {   
               props.match.path === '/' ?
               <div className="sorting">
-                <Link className="link" to="/SortByIngredients">搜尋食材</Link>&nbsp;&nbsp;
-                <Link className="link" to="/SortByUsages">搜尋料理屬性</Link>
+                <span className="link" data-link="/SortByIngredients" onClick={(event) => props.resetWhenChangePage(event, props)}>搜尋食材</span>&nbsp;&nbsp;
+                <span className="link" data-link="/SortByUsages" onClick={(event) => props.resetWhenChangePage(event, props)}>搜尋料理屬性</span>
                 <SortBySearch
                     filteredDishes={renderDish}
                     onChangeSearch={props.onChangeSearch}
@@ -85,8 +82,8 @@ const Page = (props) => {
               </div> :
               props.match.path === '/SortByIngredients' ?
               <div className="sorting">
-                <Link className="link" to="/">搜尋食譜</Link>&nbsp;&nbsp;
-                <Link className="link" to="/SortByUsages">搜尋料理屬性</Link>
+                <span className="link" data-link="/" onClick={(event)=>props.resetWhenChangePage(event, props)}>搜尋食譜</span>&nbsp;&nbsp;
+                <span className="link" data-link="/SortByUsages" onClick={(event)=>props.resetWhenChangePage(event, props)}>搜尋料理屬性</span>
                 <SortByIngredients
                     filteredDishes={renderDish} 
                     onHandleChangeIngredients={props.onHandleChangeIngredients}
@@ -94,8 +91,8 @@ const Page = (props) => {
                 />
               </div> :
               <div className="sorting">
-                <Link className="link" to="/">搜尋食譜</Link>&nbsp;&nbsp;
-                <Link className="link" to="/SortByIngredients">搜尋食材</Link>
+                <span className="link" data-link="/" onClick={(event)=>props.resetWhenChangePage(event, props)}>搜尋食譜</span>&nbsp;&nbsp;
+                <span className="link" data-link="/SortByIngredients" onClick={(event)=>props.resetWhenChangePage(event, props)}>搜尋食材</span>
                 <SortByUsages
                     filteredDishes={renderDish} 
                     onHandleChangeUsages={props.onHandleChangeUsages}
