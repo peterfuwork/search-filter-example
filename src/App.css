@@ -176,6 +176,14 @@ iron-image {
   margin: 1rem 0;
 }
 
+@media(max-width:767px) {
+  .sorting .checkboxes input[type="text"] {
+    display: block;
+    margin: 1rem 0;
+    width: 100%;
+  }
+}
+
 .sorting .checkboxes .ingredient-checkbox .checkbox {
   margin-right: 5px;
   vertical-align: middle;
