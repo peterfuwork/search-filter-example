@@ -3,6 +3,7 @@ import SortBySearch from './SortBySearch';
 import SortByIngredients from './SortByIngredients';
 import SortByUsages from './SortByUsages';
 import ResultList from './ResultList';
+import Footer from './Footer';
 
 const Page = (props) => {
     const { currentPage, dishPerPage, filteredDishes } = props;
@@ -104,6 +105,7 @@ const Page = (props) => {
                   { renderPageNumbers }
               </div>
             <ResultList filteredDishes={renderDish} />
+            <Footer />
         </div>
     );
 }

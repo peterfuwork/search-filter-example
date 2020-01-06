@@ -256,5 +256,10 @@ iron-image {
   /* max-width:60px; */
   vertical-align: top;
 }
-
+ .footer{
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 1em;
+  margin: 0.8em;
+ }
 
