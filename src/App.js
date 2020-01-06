@@ -27,8 +27,6 @@ class App extends Component {
     })
   }
 
-  
-
   findMatches(wordToMatch, dishes, inputBoxName) {
     const newWord = wordToMatch.trim().replace(/\s/g, '');
     return dishes.filter(dish => {
