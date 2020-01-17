@@ -4,6 +4,7 @@ import SortBySearch from './SortBySearch';
 import SortByIngredients from './SortByIngredients';
 import SortByUsages from './SortByUsages';
 import ResultList from './ResultList';
+import Announcement from './Announcement';
 import Footer from './Footer';
 
 const Page = (props) => {
@@ -74,79 +75,87 @@ const Page = (props) => {
 	});
 
 	return (
-		<div className="container">
-			{props.match.path === '/' ? (
-				<div className="sorting">
-					<span
-						className="link"
-						data-link="/SortByIngredients"
-						onClick={(event) => props.resetWhenChangePage(event, props)}
-					>
-						搜尋食材
-					</span>
-					&nbsp;&nbsp;
-					<span
-						className="link"
-						data-link="/SortByUsages"
-						onClick={(event) => props.resetWhenChangePage(event, props)}
-					>
-						搜尋料理屬性
-					</span>
-					<SortBySearch
-						filteredDishes={renderDish}
-						onChangeSearch={props.onChangeSearch}
-					/>
-				</div>
-			) : props.match.path === '/SortByIngredients' ? (
-				<div className="sorting">
-					<span
-						className="link"
-						data-link="/"
-						onClick={(event) => props.resetWhenChangePage(event, props)}
-					>
-						搜尋食譜
-					</span>
-					&nbsp;&nbsp;
-					<span
-						className="link"
-						data-link="/SortByUsages"
-						onClick={(event) => props.resetWhenChangePage(event, props)}
-					>
-						搜尋料理屬性
-					</span>
-					<SortByIngredients
-						filteredDishes={renderDish}
-						onHandleChangeIngredients={props.onHandleChangeIngredients}
-						resetAllCheckboxes={props.resetAllCheckboxes}
-					/>
-				</div>
-			) : (
-				<div className="sorting">
-					<span
-						className="link"
-						data-link="/"
-						onClick={(event) => props.resetWhenChangePage(event, props)}
-					>
-						搜尋食譜
-					</span>
-					&nbsp;&nbsp;
-					<span
-						className="link"
-						data-link="/SortByIngredients"
-						onClick={(event) => props.resetWhenChangePage(event, props)}
-					>
-						搜尋食材
-					</span>
-					<SortByUsages
-						filteredDishes={renderDish}
-						onHandleChangeUsages={props.onHandleChangeUsages}
-						resetAllCheckboxes={props.resetAllCheckboxes}
-					/>
-				</div>
-			)}
-			<div className="pagination">{renderPageNumbers}</div>
-			<ResultList filteredDishes={renderDish} />
-			<Footer />
+		<div>
+			{props.note !== '' ? (
+				<Announcement
+					note={props.note}
+					deleteAnnouncement={props.deleteAnnouncement}
+				/>
+			) : null}
+			<div className="container">
+				{props.match.path === '/' ? (
+					<div className="sorting">
+						<span
+							className="link"
+							data-link="/SortByIngredients"
+							onClick={(event) => props.resetWhenChangePage(event, props)}
+						>
+							搜尋食材
+						</span>
+						&nbsp;&nbsp;
+						<span
+							className="link"
+							data-link="/SortByUsages"
+							onClick={(event) => props.resetWhenChangePage(event, props)}
+						>
+							搜尋料理屬性
+						</span>
+						<SortBySearch
+							filteredDishes={renderDish}
+							onChangeSearch={props.onChangeSearch}
+						/>
+					</div>
+				) : props.match.path === '/SortByIngredients' ? (
+					<div className="sorting">
+						<span
+							className="link"
+							data-link="/"
+							onClick={(event) => props.resetWhenChangePage(event, props)}
+						>
+							搜尋食譜
+						</span>
+						&nbsp;&nbsp;
+						<span
+							className="link"
+							data-link="/SortByUsages"
+							onClick={(event) => props.resetWhenChangePage(event, props)}
+						>
+							搜尋料理屬性
+						</span>
+						<SortByIngredients
+							filteredDishes={renderDish}
+							onHandleChangeIngredients={props.onHandleChangeIngredients}
+							resetAllCheckboxes={props.resetAllCheckboxes}
+						/>
+					</div>
+				) : (
+					<div className="sorting">
+						<span
+							className="link"
+							data-link="/"
+							onClick={(event) => props.resetWhenChangePage(event, props)}
+						>
+							搜尋食譜
+						</span>
+						&nbsp;&nbsp;
+						<span
+							className="link"
+							data-link="/SortByIngredients"
+							onClick={(event) => props.resetWhenChangePage(event, props)}
+						>
+							搜尋食材
+						</span>
+						<SortByUsages
+							filteredDishes={renderDish}
+							onHandleChangeUsages={props.onHandleChangeUsages}
+							resetAllCheckboxes={props.resetAllCheckboxes}
+						/>
+					</div>
+				)}
+				<div className="pagination">{renderPageNumbers}</div>
+				<ResultList filteredDishes={renderDish} />
+				<Footer />
+			</div>
 		</div>
 	);
 };

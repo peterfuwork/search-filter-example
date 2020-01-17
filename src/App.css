@@ -141,7 +141,7 @@ iron-image {
 }
 
 .sorting {
-	margin: 1rem 0;
+	margin: 2rem 0 1rem 0;
 }
 
 .sorting .link {
@@ -152,6 +152,7 @@ iron-image {
 	padding: 0.8rem;
 	font-size: 1rem;
 	border-radius: 10px;
+	cursor: pointer;
 }
 
 .sorting .link:hover,
@@ -204,6 +205,7 @@ iron-image {
 	transform: scale(1.2);
 	position: relative;
 	bottom: 3px;
+	cursor: pointer;
 }
 
 .sorting .checkboxes .deselect-checkbox .checkbox {
@@ -244,17 +246,23 @@ iron-image {
 	border-radius: 10px;
 }
 
+.sorting .checkboxes .usage-checkbox label {
+	cursor: pointer;
+}
+
 .sorting .checkboxes .deselect-checkbox {
 	display: inline-block;
 	margin: 0.5rem;
 	border: 1px solid plum;
 	padding: 0.4rem 0.8rem;
 	font-size: 1rem;
+	cursor: pointer;
 }
 
 .sorting .checkboxes .ingredient-checkbox .ingredient-label {
 	position: relative;
 	top: 6px;
+	cursor: pointer;
 }
 
 .sorting .checkboxes .ingredient-checkbox .ingredient-image {
@@ -271,4 +279,38 @@ iron-image {
 .spinner {
 	max-width: 50px;
 	margin: 0 4.7rem;
+}
+
+.announcement {
+	background-color: cornsilk;
+	padding: 0.3rem 1rem;
+	color: #000;
+	font-size: 1rem;
+	position: relative;
+	opacity: 1;
+	transition: opacity 0.5s ease-in-out;
+}
+
+.announcement .button {
+	position: absolute;
+	right: 0;
+	top: 0;
+	padding: 0.3rem 0.8rem;
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.announcement.fade {
+	opacity: 0;
+	width: 100%;
+	position: fixed;
+}
+
+.announcement .note {
+	text-align: center;
+}
+
+.announcement .button:hover {
+	color: #666666;
 }

@@ -12,7 +12,8 @@ class App extends Component {
 		checkedIngredients: [],
 		checkedUsages: [],
 		currentPage: 1,
-		dishPerPage: 12
+		dishPerPage: 12,
+		note: 'announcement'
 	};
 
 	async componentDidMount() {
@@ -27,6 +28,12 @@ class App extends Component {
 			dishes,
 			filteredDishes: dishes
 		});
+
+		setTimeout(() => {
+			this.setState({
+				note: 'announcement fade'
+			});
+		}, 10000);
 	}
 
 	findMatches(wordToMatch, dishes, inputBoxName) {
@@ -182,6 +189,15 @@ class App extends Component {
 		});
 	};
 
+	deleteAnnouncement = () => {
+		const announcementComponent = document.querySelector('.announcement');
+		announcementComponent.classList.add('fade');
+
+		this.setState({
+			note: 'announcement fade'
+		});
+	};
+
 	render() {
 		return (
 			<BrowserRouter>
@@ -192,6 +208,7 @@ class App extends Component {
 							path="/"
 							render={(props) => (
 								<Page
+									deleteAnnouncement={this.deleteAnnouncement}
 									imgOnLoad={this.imgOnLoad}
 									onClickPage={this.onClickPage}
 									onChangeSearch={this.onChangeSearch}
@@ -206,6 +223,7 @@ class App extends Component {
 							path="/SortByIngredients"
 							render={(props) => (
 								<Page
+									deleteAnnouncement={this.deleteAnnouncement}
 									imgOnLoad={this.imgOnLoad}
 									onClickPage={this.onClickPage}
 									onHandleChangeIngredients={this.onHandleChangeIngredients}
@@ -221,6 +239,7 @@ class App extends Component {
 							path="/SortByUsages"
 							render={(props) => (
 								<Page
+									deleteAnnouncement={this.deleteAnnouncement}
 									imgOnLoad={this.imgOnLoad}
 									onClickPage={this.onClickPage}
 									onHandleChangeUsages={this.onHandleChangeUsages}
