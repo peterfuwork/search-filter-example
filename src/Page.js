@@ -100,6 +100,13 @@ const Page = (props) => {
 						>
 							搜尋料理屬性
 						</span>
+						&nbsp;&nbsp;
+						<span
+							className="link newest"
+							onClick={() => props.filteredNewDishes()}
+						>
+							最新食譜
+						</span>
 						<SortBySearch
 							filteredDishes={renderDish}
 							onChangeSearch={props.onChangeSearch}
@@ -121,6 +128,13 @@ const Page = (props) => {
 							onClick={(event) => props.resetWhenChangePage(event, props)}
 						>
 							搜尋料理屬性
+						</span>
+						&nbsp;&nbsp;
+						<span
+							className="link newest"
+							onClick={() => props.filteredNewDishes()}
+						>
+							最新食譜
 						</span>
 						<SortByIngredients
 							filteredDishes={renderDish}
@@ -145,6 +159,13 @@ const Page = (props) => {
 						>
 							搜尋食材
 						</span>
+						&nbsp;&nbsp;
+						<span
+							className="link newest"
+							onClick={() => props.filteredNewDishes()}
+						>
+							最新食譜
+						</span>
 						<SortByUsages
 							filteredDishes={renderDish}
 							onHandleChangeUsages={props.onHandleChangeUsages}
@@ -152,6 +173,7 @@ const Page = (props) => {
 						/>
 					</div>
 				)}
+
 				<div className="pagination">{renderPageNumbers}</div>
 				<ResultList filteredDishes={renderDish} />
 				<Footer />

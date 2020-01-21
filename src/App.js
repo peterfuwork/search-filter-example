@@ -198,6 +198,16 @@ class App extends Component {
 		});
 	};
 
+	filteredNewDishes = () => {
+		const newDishes = this.state.dishes.filter((dish) => {
+			return dish.newDish === true;
+		});
+
+		this.setState({
+			filteredDishes: newDishes
+		});
+	};
+
 	render() {
 		return (
 			<BrowserRouter>
@@ -208,6 +218,7 @@ class App extends Component {
 							path="/"
 							render={(props) => (
 								<Page
+									filteredNewDishes={this.filteredNewDishes}
 									deleteAnnouncement={this.deleteAnnouncement}
 									imgOnLoad={this.imgOnLoad}
 									onClickPage={this.onClickPage}
@@ -223,6 +234,7 @@ class App extends Component {
 							path="/SortByIngredients"
 							render={(props) => (
 								<Page
+									filteredNewDishes={this.filteredNewDishes}
 									deleteAnnouncement={this.deleteAnnouncement}
 									imgOnLoad={this.imgOnLoad}
 									onClickPage={this.onClickPage}
@@ -239,6 +251,7 @@ class App extends Component {
 							path="/SortByUsages"
 							render={(props) => (
 								<Page
+									filteredNewDishes={this.filteredNewDishes}
 									deleteAnnouncement={this.deleteAnnouncement}
 									imgOnLoad={this.imgOnLoad}
 									onClickPage={this.onClickPage}

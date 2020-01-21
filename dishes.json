@@ -4753,7 +4753,8 @@
       "回復血量": "生命持續恢復",
       "傷害加成": "提升對人型怪物傷害"
     },
-    "image": "https://www.dropbox.com/s/43peljslucci8xo/IMG_0436.png?raw=1"
+    "image": "https://www.dropbox.com/s/43peljslucci8xo/IMG_0436.png?raw=1",
+    "newDish": true
   },
   {
     "name": "蕉葉柳魚",
@@ -4773,7 +4774,8 @@
     "usageObj": {
       "採集暴擊": "提升伐木、挖掘、採麻主資源暴擊率"
     },
-    "image": "https://www.dropbox.com/s/t52dags9hbpmx6s/IMG_0442.png?raw=1"
+    "image": "https://www.dropbox.com/s/t52dags9hbpmx6s/IMG_0442.png?raw=1",
+    "newDish": true
   },
   {
     "name": "沙嗲",
@@ -4791,7 +4793,8 @@
     "usageObj": {
       "換彈加速": "提升換彈速度"
     },
-    "image": "https://www.dropbox.com/s/jx10y0vcl0acrde/IMG_0444.png?raw=1"
+    "image": "https://www.dropbox.com/s/jx10y0vcl0acrde/IMG_0444.png?raw=1",
+    "newDish": true
   },
   {
     "name": "雞蛋仔",
@@ -4811,7 +4814,8 @@
       "傷害加成": "提升對感染者傷害",
       "熟練度獲取": "提升戰鬥熟練度獲取效率"
     },
-    "image": "https://www.dropbox.com/s/tdkbogq8ea4umvb/IMG_0441.png?raw=1"
+    "image": "https://www.dropbox.com/s/tdkbogq8ea4umvb/IMG_0441.png?raw=1",
+    "newDish": true
   },
   {
     "name": "咖哩炒蟹",
@@ -4831,7 +4835,8 @@
     "usageObj": {
       "採集暴擊": "提升伐木、挖掘、採麻副資源暴擊率"
     },
-    "image": "https://www.dropbox.com/s/nixjafymch1y2ks/IMG_0443.png?raw=1"
+    "image": "https://www.dropbox.com/s/nixjafymch1y2ks/IMG_0443.png?raw=1",
+    "newDish": true
   },
   {
     "name": "鼎邊銼",
@@ -4853,7 +4858,8 @@
     "usageObj": {
       "採集速度": "提升伐木、挖掘、採麻效率"
     },
-    "image": "https://www.dropbox.com/s/e1ggaeqrp50gajt/IMG_0440.png?raw=1"
+    "image": "https://www.dropbox.com/s/e1ggaeqrp50gajt/IMG_0440.png?raw=1",
+    "newDish": true
   },
   {
     "name": "滷肉飯",
@@ -4877,7 +4883,8 @@
       "抗惡劣環境": "提升暴風雪抵抗力",
       "傷害加成": "提升對人型怪物傷害"
     },
-    "image": "https://www.dropbox.com/s/cjwgbhpqvw7ny2i/IMG_0445.png?raw=1"
+    "image": "https://www.dropbox.com/s/cjwgbhpqvw7ny2i/IMG_0445.png?raw=1",
+    "newDish": true
   },
   {
     "name": "西多士",
@@ -4901,7 +4908,8 @@
       "採集速度": "提升伐木效率",
       "採集暴擊": "提升伐木主資源暴擊率"
     },
-    "image": "https://www.dropbox.com/s/u7lv1aczrr64k3w/IMG_0450.png?raw=1"
+    "image": "https://www.dropbox.com/s/u7lv1aczrr64k3w/IMG_0450.png?raw=1",
+    "newDish": true
   },
   {
     "name": "咖哩魚蛋",
@@ -4923,7 +4931,8 @@
       "採集速度": "提升採麻效率",
       "採集暴擊": "提升採麻主資源暴擊率"
     },
-    "image": "https://www.dropbox.com/s/rp22xjjh28o8z57/IMG_0446.png?raw=1"
+    "image": "https://www.dropbox.com/s/rp22xjjh28o8z57/IMG_0446.png?raw=1",
+    "newDish": true
   },
   {
     "name": "天婦羅",
@@ -4947,7 +4956,8 @@
       "採集速度": "提升採麻效率",
       "採集暴擊": "提升採麻副資源暴擊率"
     },
-    "image": "https://www.dropbox.com/s/gq5f5q221gw720w/IMG_0451.png?raw=1"
+    "image": "https://www.dropbox.com/s/gq5f5q221gw720w/IMG_0451.png?raw=1",
+    "newDish": true
   },
   {
     "name": "關東煮",
@@ -4971,7 +4981,8 @@
       "傷害加成": "提升對感染者傷害",
       "奔跑消耗體力減少": "降低奔跑體力消耗"
     },
-    "image": "https://www.dropbox.com/s/ad04uqik8cv43zi/IMG_0437.png?raw=1"
+    "image": "https://www.dropbox.com/s/ad04uqik8cv43zi/IMG_0437.png?raw=1",
+    "newDish": true
   },
   {
     "name": "大米河粉",
@@ -4993,7 +5004,8 @@
       "熟練度獲取": "提升採集熟練度獲取效率",
       "體力恢復加速": "提升體力恢復速度"
     },
-    "image": "https://www.dropbox.com/s/h2qkxezamqhstsl/IMG_0438.png?raw=1"
+    "image": "https://www.dropbox.com/s/h2qkxezamqhstsl/IMG_0438.png?raw=1",
+    "newDish": true
   },
   {
     "name": "豬扒包",
@@ -5015,7 +5027,8 @@
       "射程增加": "提升射擊距離",
       "爆頭傷害": "提升爆頭傷害"
     },
-    "image": "https://www.dropbox.com/s/z7kzuon2alcbmja/IMG_0448.png?raw=1"
+    "image": "https://www.dropbox.com/s/z7kzuon2alcbmja/IMG_0448.png?raw=1",
+    "newDish": true
   },
   {
     "name": "蝦籽撈面",
@@ -5039,7 +5052,8 @@
       "採集速度": "提升挖掘效率",
       "採集暴擊": "提升挖掘暴擊"
     },
-    "image": "https://www.dropbox.com/s/trn36d40p51z0kc/IMG_0449.png?raw=1"
+    "image": "https://www.dropbox.com/s/trn36d40p51z0kc/IMG_0449.png?raw=1",
+    "newDish": true
   },
   {
     "name": "蔬菜壽司",
@@ -5059,7 +5073,8 @@
       "體力恢復加速": "體力恢復速度增加",
       "冷兵器揮擊速度": "提升揮砍速度"
     },
-    "image": "https://www.dropbox.com/s/v3jb8cxer2f4y8t/IMG_0439.png?raw=1"
+    "image": "https://www.dropbox.com/s/v3jb8cxer2f4y8t/IMG_0439.png?raw=1",
+    "newDish": true
   },
   {
     "name": "冬陽功湯",
@@ -5081,7 +5096,8 @@
       "暴擊率": "提升暴擊率",
       "抗惡劣環境": "提升沙塵暴抵抗力"
     },
-    "image": "https://www.dropbox.com/s/h1f1cczfetiwdwp/IMG_0447.png?raw=1"
+    "image": "https://www.dropbox.com/s/h1f1cczfetiwdwp/IMG_0447.png?raw=1",
+    "newDish": true
   },
   {
     "name": "不可描述的食物",
