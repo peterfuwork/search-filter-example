@@ -1429,9 +1429,9 @@
       "特殊備註"
     ],
     "recipeObj": {
-      "麵粉": "任意數量",
-      "芝麻": "任意數量",
-      "特殊備註": "2019元宵節限定"
+      "麵粉": "2",
+      "芝麻": "2",
+      "特殊備註": "元宵節限定"
     },
     "usages": [
       "去除感冒"
@@ -1439,7 +1439,8 @@
     "usageObj": {
       "去除感冒": "去除感冒"
     },
-    "image": "https://www.dropbox.com/s/77nccputte4qc4l/coming_soon.png?raw=1"
+    "image": "https://www.dropbox.com/s/isex5jm7nbylmjy/IMG_0541.png?raw=1",
+    "newDish": true
   },
   {
     "name": "花生元宵",
@@ -1449,9 +1450,9 @@
       "特殊備註"
     ],
     "recipeObj": {
-      "麵粉": "任意數量",
-      "花生": "任意數量",
-      "特殊備註": "2019元宵節限定"
+      "麵粉": "2",
+      "花生": "2",
+      "特殊備註": "元宵節限定"
     },
     "usages": [
       "去除感冒"
@@ -1459,7 +1460,8 @@
     "usageObj": {
       "去除感冒": "去除感冒"
     },
-    "image": "https://www.dropbox.com/s/77nccputte4qc4l/coming_soon.png?raw=1"
+    "image": "https://www.dropbox.com/s/d1a3pwa3elunalx/IMG_0544.png?raw=1",
+    "newDish": true
   },
   {
     "name": "紅豆元宵",
@@ -1469,9 +1471,9 @@
       "特殊備註"
     ],
     "recipeObj": {
-      "麵粉": "任意數量",
-      "紅豆": "任意數量",
-      "特殊備註": "2019元宵節限定"
+      "麵粉": "2",
+      "紅豆": "2",
+      "特殊備註": "元宵節限定"
     },
     "usages": [
       "去除感冒"
@@ -1479,7 +1481,8 @@
     "usageObj": {
       "去除感冒": "去除感冒"
     },
-    "image": "https://www.dropbox.com/s/77nccputte4qc4l/coming_soon.png?raw=1"
+    "image": "https://www.dropbox.com/s/hvfm09q4tyr8fvb/IMG_0547.png?raw=1",
+    "newDish": true
   },
   {
     "name": "棗泥元宵",
@@ -1489,9 +1492,9 @@
       "特殊備註"
     ],
     "recipeObj": {
-      "麵粉": "任意數量",
-      "冬棗": "任意數量",
-      "特殊備註": "2019元宵節限定"
+      "麵粉": "2",
+      "冬棗": "2",
+      "特殊備註": "元宵節限定"
     },
     "usages": [
       "去除感冒"
@@ -1499,7 +1502,8 @@
     "usageObj": {
       "去除感冒": "去除感冒"
     },
-    "image": "https://www.dropbox.com/s/77nccputte4qc4l/coming_soon.png?raw=1"
+    "image": "https://www.dropbox.com/s/42nsz50pp0i3gb4/IMG_0542.png?raw=1",
+    "newDish": true
   },
   {
     "name": "彩虹元宵",
@@ -1515,7 +1519,7 @@
       "芝麻": "1",
       "花生": "1",
       "紅豆": "1",
-      "特殊備註": "2019元宵節限定"
+      "特殊備註": "元宵節限定"
     },
     "usages": [
       "去除感冒"
@@ -1523,7 +1527,8 @@
     "usageObj": {
       "去除感冒": "去除感冒"
     },
-    "image": "https://www.dropbox.com/s/77nccputte4qc4l/coming_soon.png?raw=1"
+    "image": "https://www.dropbox.com/s/z22hi3x9fn06dr2/IMG_0545.png?raw=1",
+    "newDish": true
   },
   {
     "name": "麻辣香鍋",
@@ -3831,7 +3836,8 @@
       "採集暴擊": "提升採麻資源暴擊率",
       "採集速度": "採集時間縮短"
     },
-    "image": "https://www.dropbox.com/s/77nccputte4qc4l/coming_soon.png?raw=1"
+    "image": "https://www.dropbox.com/s/1y3dt3fd3hpxzua/IMG_0546.png?raw=1",
+    "newDish": true
   },
   {
     "name": "冒菜",
@@ -3963,7 +3969,8 @@
       "移速加成": "提升移動速度",
       "暴擊率": "提升暴擊"
     },
-    "image": "https://www.dropbox.com/s/77nccputte4qc4l/coming_soon.png?raw=1"
+    "image": "https://www.dropbox.com/s/77nccputte4qc4l/coming_soon.png?raw=1",
+    "newDish": true
   },
   {
     "name": "鐘水餃",
@@ -4183,7 +4190,8 @@
     "usageObj": {
       "採集暴擊": "提升採麻主/副資源暴擊率"
     },
-    "image": "https://www.dropbox.com/s/77nccputte4qc4l/coming_soon.png?raw=1"
+    "image": "https://www.dropbox.com/s/77nccputte4qc4l/coming_soon.png?raw=1",
+    "newDish": true
   },
   {
     "name": "薑撞奶",
@@ -4753,8 +4761,7 @@
       "回復血量": "生命持續恢復",
       "傷害加成": "提升對人型怪物傷害"
     },
-    "image": "https://www.dropbox.com/s/43peljslucci8xo/IMG_0436.png?raw=1",
-    "newDish": true
+    "image": "https://www.dropbox.com/s/43peljslucci8xo/IMG_0436.png?raw=1"
   },
   {
     "name": "蕉葉柳魚",
@@ -4774,8 +4781,7 @@
     "usageObj": {
       "採集暴擊": "提升伐木、挖掘、採麻主資源暴擊率"
     },
-    "image": "https://www.dropbox.com/s/t52dags9hbpmx6s/IMG_0442.png?raw=1",
-    "newDish": true
+    "image": "https://www.dropbox.com/s/t52dags9hbpmx6s/IMG_0442.png?raw=1"
   },
   {
     "name": "沙嗲",
@@ -4793,8 +4799,7 @@
     "usageObj": {
       "換彈加速": "提升換彈速度"
     },
-    "image": "https://www.dropbox.com/s/jx10y0vcl0acrde/IMG_0444.png?raw=1",
-    "newDish": true
+    "image": "https://www.dropbox.com/s/jx10y0vcl0acrde/IMG_0444.png?raw=1"
   },
   {
     "name": "雞蛋仔",
@@ -4814,8 +4819,7 @@
       "傷害加成": "提升對感染者傷害",
       "熟練度獲取": "提升戰鬥熟練度獲取效率"
     },
-    "image": "https://www.dropbox.com/s/tdkbogq8ea4umvb/IMG_0441.png?raw=1",
-    "newDish": true
+    "image": "https://www.dropbox.com/s/tdkbogq8ea4umvb/IMG_0441.png?raw=1"
   },
   {
     "name": "咖哩炒蟹",
@@ -4835,8 +4839,7 @@
     "usageObj": {
       "採集暴擊": "提升伐木、挖掘、採麻副資源暴擊率"
     },
-    "image": "https://www.dropbox.com/s/nixjafymch1y2ks/IMG_0443.png?raw=1",
-    "newDish": true
+    "image": "https://www.dropbox.com/s/nixjafymch1y2ks/IMG_0443.png?raw=1"
   },
   {
     "name": "鼎邊銼",
@@ -4858,8 +4861,7 @@
     "usageObj": {
       "採集速度": "提升伐木、挖掘、採麻效率"
     },
-    "image": "https://www.dropbox.com/s/e1ggaeqrp50gajt/IMG_0440.png?raw=1",
-    "newDish": true
+    "image": "https://www.dropbox.com/s/e1ggaeqrp50gajt/IMG_0440.png?raw=1"
   },
   {
     "name": "滷肉飯",
@@ -4883,8 +4885,7 @@
       "抗惡劣環境": "提升暴風雪抵抗力",
       "傷害加成": "提升對人型怪物傷害"
     },
-    "image": "https://www.dropbox.com/s/cjwgbhpqvw7ny2i/IMG_0445.png?raw=1",
-    "newDish": true
+    "image": "https://www.dropbox.com/s/cjwgbhpqvw7ny2i/IMG_0445.png?raw=1"
   },
   {
     "name": "西多士",
@@ -4908,8 +4909,7 @@
       "採集速度": "提升伐木效率",
       "採集暴擊": "提升伐木主資源暴擊率"
     },
-    "image": "https://www.dropbox.com/s/u7lv1aczrr64k3w/IMG_0450.png?raw=1",
-    "newDish": true
+    "image": "https://www.dropbox.com/s/u7lv1aczrr64k3w/IMG_0450.png?raw=1"
   },
   {
     "name": "咖哩魚蛋",
@@ -4931,8 +4931,7 @@
       "採集速度": "提升採麻效率",
       "採集暴擊": "提升採麻主資源暴擊率"
     },
-    "image": "https://www.dropbox.com/s/rp22xjjh28o8z57/IMG_0446.png?raw=1",
-    "newDish": true
+    "image": "https://www.dropbox.com/s/rp22xjjh28o8z57/IMG_0446.png?raw=1"
   },
   {
     "name": "天婦羅",
@@ -4956,8 +4955,7 @@
       "採集速度": "提升採麻效率",
       "採集暴擊": "提升採麻副資源暴擊率"
     },
-    "image": "https://www.dropbox.com/s/gq5f5q221gw720w/IMG_0451.png?raw=1",
-    "newDish": true
+    "image": "https://www.dropbox.com/s/gq5f5q221gw720w/IMG_0451.png?raw=1"
   },
   {
     "name": "關東煮",
@@ -4981,8 +4979,7 @@
       "傷害加成": "提升對感染者傷害",
       "奔跑消耗體力減少": "降低奔跑體力消耗"
     },
-    "image": "https://www.dropbox.com/s/ad04uqik8cv43zi/IMG_0437.png?raw=1",
-    "newDish": true
+    "image": "https://www.dropbox.com/s/ad04uqik8cv43zi/IMG_0437.png?raw=1"
   },
   {
     "name": "大米河粉",
@@ -5004,8 +5001,7 @@
       "熟練度獲取": "提升採集熟練度獲取效率",
       "體力恢復加速": "提升體力恢復速度"
     },
-    "image": "https://www.dropbox.com/s/h2qkxezamqhstsl/IMG_0438.png?raw=1",
-    "newDish": true
+    "image": "https://www.dropbox.com/s/h2qkxezamqhstsl/IMG_0438.png?raw=1"
   },
   {
     "name": "豬扒包",
@@ -5027,8 +5023,7 @@
       "射程增加": "提升射擊距離",
       "爆頭傷害": "提升爆頭傷害"
     },
-    "image": "https://www.dropbox.com/s/z7kzuon2alcbmja/IMG_0448.png?raw=1",
-    "newDish": true
+    "image": "https://www.dropbox.com/s/z7kzuon2alcbmja/IMG_0448.png?raw=1"
   },
   {
     "name": "蝦籽撈面",
@@ -5052,8 +5047,7 @@
       "採集速度": "提升挖掘效率",
       "採集暴擊": "提升挖掘暴擊"
     },
-    "image": "https://www.dropbox.com/s/trn36d40p51z0kc/IMG_0449.png?raw=1",
-    "newDish": true
+    "image": "https://www.dropbox.com/s/trn36d40p51z0kc/IMG_0449.png?raw=1"
   },
   {
     "name": "蔬菜壽司",
@@ -5073,8 +5067,7 @@
       "體力恢復加速": "體力恢復速度增加",
       "冷兵器揮擊速度": "提升揮砍速度"
     },
-    "image": "https://www.dropbox.com/s/v3jb8cxer2f4y8t/IMG_0439.png?raw=1",
-    "newDish": true
+    "image": "https://www.dropbox.com/s/v3jb8cxer2f4y8t/IMG_0439.png?raw=1"
   },
   {
     "name": "冬陽功湯",
@@ -5096,8 +5089,7 @@
       "暴擊率": "提升暴擊率",
       "抗惡劣環境": "提升沙塵暴抵抗力"
     },
-    "image": "https://www.dropbox.com/s/h1f1cczfetiwdwp/IMG_0447.png?raw=1",
-    "newDish": true
+    "image": "https://www.dropbox.com/s/h1f1cczfetiwdwp/IMG_0447.png?raw=1"
   },
   {
     "name": "不可描述的食物",
