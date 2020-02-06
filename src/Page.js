@@ -137,7 +137,10 @@ const Page = (props) => {
 							className="link newest"
 							onClick={() => props.filteredNewDishes()}
 						>
-							最新食譜
+							2020元宵節食譜
+							<i className="material-icons" style={{ fontSize: '1.2em' }}>
+								&#xe05e;
+							</i>
 						</span>
 						<SortByIngredients
 							filteredDishes={renderDish}
@@ -167,7 +170,10 @@ const Page = (props) => {
 							className="link newest"
 							onClick={() => props.filteredNewDishes()}
 						>
-							最新食譜
+							2020元宵節食譜
+							<i className="material-icons" style={{ fontSize: '1.2em' }}>
+								&#xe05e;
+							</i>
 						</span>
 						<SortByUsages
 							filteredDishes={renderDish}
