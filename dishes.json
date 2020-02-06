@@ -1434,14 +1434,18 @@
       "特殊備註": "元宵節限定"
     },
     "usages": [
+      "採集速度",
+      "採集暴擊",
       "去除感冒"
     ],
     "usageObj": {
+      "採集速度": "提升採麻速度",
+      "採集暴擊": "提升採麻暴擊",
       "去除感冒": "去除感冒"
     },
     "image": "https://www.dropbox.com/s/isex5jm7nbylmjy/IMG_0541.png?raw=1",
     "newDish": true
-  },
+  }, 
   {
     "name": "花生元宵",
     "recipes": [
@@ -1455,9 +1459,13 @@
       "特殊備註": "元宵節限定"
     },
     "usages": [
+      "採集速度",
+      "採集暴擊",
       "去除感冒"
     ],
     "usageObj": {
+      "採集速度": "提升挖礦速度",
+      "採集暴擊": "提升挖礦暴擊",
       "去除感冒": "去除感冒"
     },
     "image": "https://www.dropbox.com/s/d1a3pwa3elunalx/IMG_0544.png?raw=1",
@@ -1476,9 +1484,13 @@
       "特殊備註": "元宵節限定"
     },
     "usages": [
+      "採集速度",
+      "採集暴擊",
       "去除感冒"
     ],
     "usageObj": {
+      "採集速度": "提升伐木速度",
+      "採集暴擊": "提升伐木暴擊",
       "去除感冒": "去除感冒"
     },
     "image": "https://www.dropbox.com/s/hvfm09q4tyr8fvb/IMG_0547.png?raw=1",
@@ -1496,10 +1508,14 @@
       "冬棗": "2",
       "特殊備註": "元宵節限定"
     },
-    "usages": [
+    "usages": [ 
+      "傷害加成",
+      "移速加成",
       "去除感冒"
     ],
     "usageObj": {
+      "傷害加成": "增加對怪物傷害",
+      "移速加成": "大幅提升移動速度",
       "去除感冒": "去除感冒"
     },
     "image": "https://www.dropbox.com/s/42nsz50pp0i3gb4/IMG_0542.png?raw=1",
@@ -1522,10 +1538,10 @@
       "特殊備註": "元宵節限定"
     },
     "usages": [
-      "去除感冒"
+      "回復血量"
     ],
     "usageObj": {
-      "去除感冒": "去除感冒"
+      "回復血量": "持續回復血量"
     },
     "image": "https://www.dropbox.com/s/z22hi3x9fn06dr2/IMG_0545.png?raw=1",
     "newDish": true
@@ -3969,7 +3985,7 @@
       "移速加成": "提升移動速度",
       "暴擊率": "提升暴擊"
     },
-    "image": "https://www.dropbox.com/s/77nccputte4qc4l/coming_soon.png?raw=1",
+    "image": "https://www.dropbox.com/s/pbxi92n3gi3fhec/IMG_0549.png?raw=1",
     "newDish": true
   },
   {
@@ -4190,7 +4206,7 @@
     "usageObj": {
       "採集暴擊": "提升採麻主/副資源暴擊率"
     },
-    "image": "https://www.dropbox.com/s/77nccputte4qc4l/coming_soon.png?raw=1",
+    "image": "https://www.dropbox.com/s/hc2dp2kw6k2hf53/IMG_0550.png?raw=1",
     "newDish": true
   },
   {
