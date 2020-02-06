@@ -103,6 +103,7 @@ const Page = (props) => {
 						&nbsp;&nbsp;
 						<span
 							className="link newest"
+							style={{ marginTop: '1.2em' }}
 							onClick={() => props.filteredNewDishes()}
 						>
 							2020元宵節食譜
@@ -135,6 +136,7 @@ const Page = (props) => {
 						&nbsp;&nbsp;
 						<span
 							className="link newest"
+							style={{ marginTop: '1.2em' }}
 							onClick={() => props.filteredNewDishes()}
 						>
 							2020元宵節食譜
@@ -168,6 +170,7 @@ const Page = (props) => {
 						&nbsp;&nbsp;
 						<span
 							className="link newest"
+							style={{ marginTop: '1.2em' }}
 							onClick={() => props.filteredNewDishes()}
 						>
 							2020元宵節食譜
