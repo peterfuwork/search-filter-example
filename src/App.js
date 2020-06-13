@@ -13,11 +13,15 @@ class App extends Component {
 		checkedUsages: [],
 		currentPage: 1,
 		dishPerPage: 12,
-		note: 'announcement'
+		note: 'announcement',
 	};
 
 	async componentDidMount() {
-		const res = await axios.get(API.api);
+		const res = await axios.get(API.api, {
+			headers: {
+				'secret-key': API.secretKey,
+			},
+		});
 		const dishes = res.data;
 
 		dishes.forEach((dish) => {
@@ -26,12 +30,12 @@ class App extends Component {
 
 		this.setState({
 			dishes,
-			filteredDishes: dishes
+			filteredDishes: dishes,
 		});
 
 		setTimeout(() => {
 			this.setState({
-				note: 'announcement fade'
+				note: 'announcement fade',
 			});
 		}, 10000);
 	}
@@ -58,7 +62,7 @@ class App extends Component {
 		});
 		this.setState({
 			filteredDishes: matchArray,
-			currentPage: 1
+			currentPage: 1,
 		});
 	}
 
@@ -70,7 +74,7 @@ class App extends Component {
 		});
 		this.setState({
 			filteredDishes: matchArray,
-			currentPage: 1
+			currentPage: 1,
 		});
 	}
 
@@ -82,7 +86,7 @@ class App extends Component {
 		const matchArray = this.findMatches(value, dishes, inputBoxName);
 		this.setState({
 			filteredDishes: matchArray,
-			currentPage: 1
+			currentPage: 1,
 		});
 	};
 
@@ -94,7 +98,7 @@ class App extends Component {
 		if (isChecked === true) {
 			this.setState(
 				{
-					checkedIngredients: [...this.state.checkedIngredients, checkedItem]
+					checkedIngredients: [...this.state.checkedIngredients, checkedItem],
 				},
 				() => {
 					this.checkIngredientsToMatches(this.state.checkedIngredients, dishes);
@@ -105,7 +109,7 @@ class App extends Component {
 				{
 					checkedIngredients: this.state.checkedIngredients.filter(
 						(val) => val !== checkedItem
-					)
+					),
 				},
 				() => {
 					this.checkIngredientsToMatches(this.state.checkedIngredients, dishes);
@@ -122,7 +126,7 @@ class App extends Component {
 		if (isChecked === true) {
 			this.setState(
 				{
-					checkedUsages: [...this.state.checkedUsages, checkedItem]
+					checkedUsages: [...this.state.checkedUsages, checkedItem],
 				},
 				() => {
 					console.log(this.state.checkedUsages);
@@ -134,7 +138,7 @@ class App extends Component {
 				{
 					checkedUsages: this.state.checkedUsages.filter(
 						(val) => val !== checkedItem
-					)
+					),
 				},
 				() => {
 					this.checkUsagesToMatches(this.state.checkedUsages, dishes);
@@ -145,7 +149,7 @@ class App extends Component {
 
 	onClickPage = (event) => {
 		this.setState({
-			currentPage: Number(event.target.id)
+			currentPage: Number(event.target.id),
 		});
 	};
 
@@ -157,7 +161,7 @@ class App extends Component {
 		this.setState({
 			filteredDishes: this.state.dishes,
 			checkedUsages: [],
-			checkedIngredients: []
+			checkedIngredients: [],
 		});
 	};
 
@@ -167,7 +171,7 @@ class App extends Component {
 			{
 				filteredDishes: this.state.dishes,
 				checkedUsages: [],
-				checkedIngredients: []
+				checkedIngredients: [],
 			},
 			() => {
 				props.history.push(path);
@@ -185,7 +189,7 @@ class App extends Component {
 			}
 		});
 		this.setState({
-			dishes: newDishes
+			dishes: newDishes,
 		});
 	};
 
@@ -194,7 +198,7 @@ class App extends Component {
 		announcementComponent.classList.add('fade');
 
 		this.setState({
-			note: 'announcement fade'
+			note: 'announcement fade',
 		});
 	};
 
@@ -204,7 +208,7 @@ class App extends Component {
 		});
 
 		this.setState({
-			filteredDishes: newDishes
+			filteredDishes: newDishes,
 		});
 	};
 
