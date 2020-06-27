@@ -181,15 +181,16 @@ class App extends Component {
 
 	imgOnLoad = (currentDish) => {
 		const currentDishName = currentDish.name;
-		const newDishes = this.state.dishes;
+		const imgLoadedDishes = this.state.dishes;
 
-		newDishes.forEach((dish) => {
+		imgLoadedDishes.forEach((dish) => {
 			if (dish.name === currentDishName) {
 				dish['imageLoad'] = true;
 			}
 		});
+
 		this.setState({
-			dishes: newDishes,
+			dishes: imgLoadedDishes,
 		});
 	};
 
@@ -206,9 +207,18 @@ class App extends Component {
 		const newDishes = this.state.dishes.filter((dish) => {
 			return dish.newDish === true;
 		});
-
 		this.setState({
 			filteredDishes: newDishes,
+		});
+	};
+
+	// Added new
+	filteredSeasonalDishes = () => {
+		const seasonalDishes = this.state.dishes.filter((dish) => {
+			return dish.seasonalDish === true;
+		});
+		this.setState({
+			filteredDishes: seasonalDishes,
 		});
 	};
 
@@ -223,6 +233,7 @@ class App extends Component {
 							render={(props) => (
 								<Page
 									filteredNewDishes={this.filteredNewDishes}
+									filteredSeasonalDishes={this.filteredSeasonalDishes}
 									deleteAnnouncement={this.deleteAnnouncement}
 									imgOnLoad={this.imgOnLoad}
 									onClickPage={this.onClickPage}
@@ -239,6 +250,7 @@ class App extends Component {
 							render={(props) => (
 								<Page
 									filteredNewDishes={this.filteredNewDishes}
+									filteredSeasonalDishes={this.filteredSeasonalDishes}
 									deleteAnnouncement={this.deleteAnnouncement}
 									imgOnLoad={this.imgOnLoad}
 									onClickPage={this.onClickPage}
@@ -256,6 +268,7 @@ class App extends Component {
 							render={(props) => (
 								<Page
 									filteredNewDishes={this.filteredNewDishes}
+									filteredSeasonalDishes={this.filteredSeasonalDishes}
 									deleteAnnouncement={this.deleteAnnouncement}
 									imgOnLoad={this.imgOnLoad}
 									onClickPage={this.onClickPage}

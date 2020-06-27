@@ -106,7 +106,18 @@ const Page = (props) => {
 							style={{ marginTop: '1.2em' }}
 							onClick={() => props.filteredNewDishes()}
 						>
-							2020元宵節食譜
+							6月後更新食譜
+							<i className="material-icons" style={{ fontSize: '1.2em' }}>
+								&#xe05e;
+							</i>
+						</span>
+						&nbsp;&nbsp;
+						<span
+							className="link newest"
+							style={{ marginTop: '1.2em' }}
+							onClick={() => props.filteredSeasonalDishes()}
+						>
+							2020端午節食譜
 							<i className="material-icons" style={{ fontSize: '1.2em' }}>
 								&#xe05e;
 							</i>
@@ -139,7 +150,18 @@ const Page = (props) => {
 							style={{ marginTop: '1.2em' }}
 							onClick={() => props.filteredNewDishes()}
 						>
-							2020元宵節食譜
+							6月後更新食譜
+							<i className="material-icons" style={{ fontSize: '1.2em' }}>
+								&#xe05e;
+							</i>
+						</span>
+						&nbsp;&nbsp;
+						<span
+							className="link newest"
+							style={{ marginTop: '1.2em' }}
+							onClick={() => props.filteredSeasonalDishes()}
+						>
+							2020端午節食譜
 							<i className="material-icons" style={{ fontSize: '1.2em' }}>
 								&#xe05e;
 							</i>
@@ -173,7 +195,18 @@ const Page = (props) => {
 							style={{ marginTop: '1.2em' }}
 							onClick={() => props.filteredNewDishes()}
 						>
-							2020元宵節食譜
+							6月後更新食譜
+							<i className="material-icons" style={{ fontSize: '1.2em' }}>
+								&#xe05e;
+							</i>
+						</span>
+						&nbsp;&nbsp;
+						<span
+							className="link newest"
+							style={{ marginTop: '1.2em' }}
+							onClick={() => props.filteredSeasonalDishes()}
+						>
+							2020端午節食譜
 							<i className="material-icons" style={{ fontSize: '1.2em' }}>
 								&#xe05e;
 							</i>
