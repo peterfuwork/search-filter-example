@@ -3,6 +3,7 @@ import axios from 'axios';
 import { BrowserRouter, Route } from 'react-router-dom';
 import Page from './Page';
 import API from './api';
+import food from './assets/dishes.json';
 import './App.css';
 
 class App extends Component {
@@ -17,12 +18,13 @@ class App extends Component {
 	};
 
 	async componentDidMount() {
-		const res = await axios.get(API.api, {
-			headers: {
-				'secret-key': API.secretKey,
-			},
-		});
-		const dishes = res.data;
+		// const res = await axios.get(API.api, {
+		// 	headers: {
+		// 		'secret-key': API.secretKey,
+		// 	},
+		// });
+		// const dishes = res.data;
+		const dishes = food;
 
 		dishes.forEach((dish) => {
 			dish['imageLoad'] = false;
